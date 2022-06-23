@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lists in HTML</title>
+    <style>
+        li a{
+            display: block;
+            color:yellow;
+            background-color: red;
+            text-align: center;
+            padding: 15px;
+            margin: 5px;
+        }
+        li a:hover{
+            background-color: yellow;
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <nav style="display: inline-block; width:20%; vertical-align: top; border: 2px solid blueviolet; ">
+        <ul style="list-style-type: none; text-align: center;">
+        <li><a href="./FirstExample.html">First Example</a></li>
+        <li><a href="./BasicTags.html">Basic Tags</a></li>
+        <li><a href="./MetaExample.html">Meta Example</a></li>
+        <li><a href="./Images.html">Images</a></li>
+        <li><a href="./ContentElements.html">Content Elements</a></li>
+        </ul>
+    </nav>
+    <div style="display: inline-block; width: 75%;margin-left: 5px;">
+    <h1>Lists in HTML docs</h1>
+    <hr>
+    <p>
+        Lists provide users to see the content as a list of items in their pages.
+        <p>Example for Ordered list. Here we will list the modules that we learn in CDAC/p>
+        <ol type="A">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>jQuery</li>
+            <li>NodeJs</li>
+            <li>Express</li>
+            <li>React</li>
+            <li>Web Security</li>
+        </ol>
+    </p>
+
+    <p>
+        Unordered Lists are used to present the content as list but with no numbering in them. This will be like a List of things to do kind of work. In our example, the software requirements for this learning program are:
+        <!--
+        <ul style="list-style-image: url('./Images/Apples.jfif')">
+        -->
+        <ul style="list-style-type: circle;"></ul>
+            <li>Any OS</li>
+            <li>VS code or Sublime Text</li>
+            <li>Nodejs</li>
+            <li>jQuery library</li>
+            <li>React library</li>
+            <li>BootStrap</li>
+        </ul>
+    </p>
+</div>
+</body>
+</html>

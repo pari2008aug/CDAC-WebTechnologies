@@ -1,0 +1,100 @@
+A Web is a network of interconnected devices where they can share the info among them. In this large group of machines, one machine will store the information, that is called as Server or simply Web server. 
+A Server machine is a machine that serves(gives/provides services) the information to the rest of the system. The machine will have additional Software to handle the inputs from various machines in the form of a protocol called HTTP. Examples of these software called Apache Tomcat, IIS, WebSphere and many more. The purpose of the Web server is to store the Web content.
+Other machines in the network will make requests to get information thru this protocol(HTTP) and will get back the required info if it is available in that server.
+The information would be data in the form of text that will serve the purpose for the User who makes that request. The info will be grouped into a Website. People make requests to these websites that are identified uniquely and will get the info.
+A Website is a collection of Web content in the form of pages that are identified by a common domain name and published/hosted on at least one Web server. 
+
+How is the information shared in Web?
+ information in Web is shared in the form of Web Pages, or simply a text based document saved with an extension .html. These pages are written using a sp language called HTML(Hyper Text Markup Language) These pages are grouped into a Web site and hosted inside a Web server.  
+Users will contact this website using a software called BROWSER and request for a certain page. If the server contains the page, it will render the page, else gives a Error Page saying that the Page is not available with it. Some of the prominent browsers are (IE), EDGE, Chrome, FireFox, Safari etc.
+
+Contents of a Web Page:
+A Web Page wil contain text, images, audio, video, graphics and links to other Pages. The pages with these links are called as Hyper Text.
+"HyperText" is a text that contains links to other texts as opposed to a single linear flow of text like a NOVEL.
+In Web Pages, the text will be surrounded with Arrow tags called Markups. Markups are predefined sp instructions given to the content on how it has to be displayed. HTML is made of many such markups. HyperText with Markups are called HTML(HyperText Markup Language). All browsers understand HTML, its markups and display the content in the format that is required to do so.  
+
+What is HTML?
+To build websites, U should know about HTML, which is a Fundamental technology to define the structure of a Web Page. HTML specifies how UR Web content be recognized. It defines whether the content should be a Paragraph, Heading, List, Link, table content or any other way. 
+Markups are also called as HTML Tags, elements.
+Markups tells the web browsers how to structure the web pages that U get. The browser understands the markups that U have placed, present the content of that mark up in the predefined format that is common among all the browsers. The markup stds are defined by an organization called W3c(World Wide Web consortium). All browsers adhere to the stds defined by W3C and update their browsers accordingly. 
+
+Contents of a HTML ELement:
+Opening Tags, End Tags and the Content.  End Tags will be prefixed with a /. 
+
+Contents of a basic HTML Doc:
+<!DOCTYPE..> This tag defines the kind of the Doc that U R Developing. In our case, it will be html.
+
+<html> This tag contains all the info about your Html Document. HTML Tag mainly contains head section and body section. The info about UR HTML Document is placed in the head section and the contents of the Document are placed in the body section of the document. 
+
+<head> This tag contains the document's header section. This section contains the info about UR document that includes info like Author, modified date, info that can be captured by the search engines, links and references of other pages that are used in this document like Stylesheets(Formatting structures), Additional Script files(Programming structures in Java Script) and many more.
+
+<body> It contains the content of UR HTML Document. This section is the visible section of the HTML. The body tag will hold other HTML Tags like headings, divisions, Paragraphs, Tables, Lists, Forms and many more. 
+
+Contents of a Head section:
+The head section contains info about the current document, links to additional files that is requried for this document, title of the document. 
+Info about UR document can be given in the form of meta tags. Meta means information. In this case, its info about UR Doc. Example is shared. The main contents of the meta tag are : content, name. Name contains the info and content has the details of the info. Some of the common name values are author, keywords, description, revised and many more. Refer the Mozilla Website on other values for name attribute in meta tag.
+title tag will be used to set the title of the document. This part will be made available in the titlebar of the browser or tab of the Browser. 
+link tag will be used to refer addtional files like CSS files into UR doc. Will cover this in CSS Training. 
+
+Under Body tag, you will have the content of your document. This content will be marked with formatting tags, basic tags, listing tags, tables, forms and many more. 
+
+Basic Tags of HTML:
+Headings: There are different sizes for the headings from h1 to h6 where h1 is the largest. Usually used to specify the headings of the document, sections of the document as well as Paragraphs of the document. 
+Paragraphs, hr, br and span are some of the basic tags of every html document. 
+
+Formatting tags are tags that are used to format the text of the document. This includes bold, italics, underline, strikeThrough, code, cite, emp, pre  and many more. From HTML5 and CSS 3, we dont recommend to use the formatting tags, instead go for CSS Styles which are more efficient and cleanly maintainable. 
+
+Images in HTML can be rendered using img tag with attributes like src and alt. src must have the path of the image file to display. It is good to use relative path than an absolute path. alt will be used by the browser if the img is not loaded into the document. Instead of using width and height attributes, U must use CSS for UR image sizes to be mentioned in the document. u can also use animated gifs within UR Doc. 
+U can also set images as backgrounds to UR documents. However, professional Websites dont have thick and dark images in their websites as it would be hard to read the content. 
+
+Lists are used to provide content as a list. U can have 2 kinds of lists: Ordered and Unordered lists. Ordered lists will have numbering and unordered will have bulletted list. However, with styles, U can change the bullet format to suit Ur requirement that might include image also. U can have nested lists also where one list item can have another sublist of items in it. The real usage of unordered list will come when U want to place the Links of UR document in a vertical position.
+2nd Day:
+description lists:
+We also have a sp type of lists called Description lists that can be used while creating dictionary kind of listings. It will have the following tags: 
+<dl> defines the desc list. 
+<dt> defines the data term
+<dd> defines the data definition or description
+
+To create links to external files and text we use <a> Tag. Anchor tag is very popular in HTML. This is the one that gives the scope of HyperTexts in UR web pages. 
+Achor tag has the following attributes:
+href: Used to define the address of the file to be linked. 
+
+Tables: Tables are used to present the data in a tabular format. U want to give a table of Employees in UR Organization. It contains the following tags:
+table: to create the table
+thead: to create head section
+th : to create a head cleanly
+tr: to create a row.
+td: data in the cell of the row
+In real time, tables fill their data using a programming logic with Scripting langauge like JS and get its data from an external source like REST Service that gives the data in the form of JSON/ SQL Data from a MySQL database.  
+
+Forms:
+To take inputs from the user and process them in UR Web App, we use Forms. Forms play a very important role in handling User inputs. As the name suggests, it is a form where people will fill information that they have to submit to UR application. However, to process the contents of the form, U should use a scripting language like JavaScript which will have programming logic on reading the input values and do some processing with it. 
+Forms are created using form tag. It takes attributes like action and method. 
+action tells the page where the processing of this form is done. 
+method tells how the data of the inputs be transfered to the page where processing is happening.. 
+input is the common tag used to take input from the user. Its type attribute will determine the kind of data input that UR program is expecting. 
+textarea is used for providing multi line text input.
+for inputs of radio, U should have the name attribute set to the same value so that they all are in one group and U should be able to select only one of the radio buttons, not multiple. For that U should use Checkboxes.
+for taking multiple selections, U should go for input type as checkbox. 
+U have 2 kinds of drop downlist in html5: one is the classic select which is a simple dropdowlist box where user can select an item from the list. New in html5 is datalist which allows the user to type like a search and select a perticular option from the datalist. The datalist tag will have an id attribute that must be set and associate with the input box to which the entry is being made.  
+-------------------------------------------------------------------------------
+Exersise:
+Create a folder called MyBookstore and create a website for a book store.
+It should have the following pages:
+A Homepage that informs about the bookstore. 
+A detailspage that contains the list of books that can be sold in a tabular content where it has info of each book with image, Author Name,Price and other details if required.Each book should be allowed to select with a submit or a check box.  
+A Shopping cart page that allows the user to buy books that he has selected from the Details page. 
+An About page that will contain brief info about UR contact details as well as UR snapshot of UR store, URself and many more. 
+
+Limitations of HTML?
+The pages are static, if U want to have dynamic content based on time, location and other info, U need a  scripting language. 
+U dont have programming feature that could enhance the feel of the Application. 
+For forms, U need Scripting languages to process the inputs given by the user. 
+To make it dynamic, we depend on small scale programming languages that will be used in the browser for rendering dynamic content. These languages that are inside the browsers are called as Scripting languages. They are always used in conjunction with HTML as HTML is rendered thru browsers only.
+
+There is a script tag in HTML that will developers to add script code in their html docs. 
+The popular scripting languages are JS(JavaScript) and VBS(VBScript). Majorly JS is widely used. 
+
+
+
+

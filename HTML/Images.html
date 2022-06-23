@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placing Images in HTML</title>
+</head>
+<body>
+    <div style="background-image: url(./Images/Apples.jfif); background-repeat: no-repeat; background-size: cover;">
+        <h1>How to place images in HTML Document?</h1>
+        <hr>
+        <p>For placing Images u could use the img tag that comes with attributes like Source(Location of the file), alt(Text to display if the file is not displayable) width and height(For the image) etc</p>
+        <h3>Apples are good for health</h3>
+        <a href="http://www.google.com">
+            <img src="./Images/Apples.jfif" width="50%" height="200px" alt="Apples">
+        </a>
+    </div>
+    <div>
+        <h2>Sample Example of Animated Gifs</h2>
+        <p>We use Animated Gifs to provide info to our users in more comical manner. Some times we have to show the users that some background work is going on and making the user wait. In such cases, Animated gifs would be used</p>
+        <p>Men at work<img src="./Images/SampleImg.gif" alt="Men at work"/></p>
+        
+    </div>
+    <div>
+        <h2>For multiple devices:</h2>
+        <p>Use the picture tag to render images for different kinds of devices. It can contain one or more source elements where U can tell for which device what image should be placed</p>
+        <picture>
+            <source media="(min-width:650px)" srcset="./Images/Apples.jfif"/>
+            <source media="(max-width:465px)" srcset="./Images/Mangoes.jfif"/>
+        </picture>
+        <img src="./Images/Mangoes.jfif" alt="Mangoes"/>
+    </div>
+</body>
+</html>

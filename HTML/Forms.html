@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Employee registration Form!</h1>
+    <form>
+       <p>Enter the Name: <input type="text" placeholder="Name Please!" required/> </p>    
+       <p>Enter UR Complete Address: <textarea rows="5" cols="25"></textarea></p>
+       <p>Enter the Email: <input type="email" placeholder="Email Details"/> </p>
+       <p>Enter the Salary: <input type="number" min="10000" max="250000"/></p> 
+       <p>Enter the date of Birth: <input type="date" placeholder="Enter UR DOB"/></p>
+       <p>Enter a Password for UR security:
+        <input type="password" placeholder="Enter a Password" required/>
+        Retype the Password:
+        <input type="text" placeholder="Retype the same password"/>
+       </p>
+       <p>Select UR Gender:
+        <input type="radio" name="gender"/>Male
+        <input type="radio" name="gender"/>Female
+        <input type="radio" name="gender"/>Others
+       </p>
+       <p>What U want to search today?:
+        <input type="search" placeholder="Search here?"/>
+       </p>
+       <p>Please pick UR Fav programming languages:
+        <input type="checkbox" />C/C++
+        <input type="checkbox"/>Java
+        <input type="checkbox"/>C#
+        <input type="checkbox"/>Python
+        <input type="checkbox"/>JavaScript
+       </p>
+       <p>Choose UR Qualification:
+        <select>
+            <option>Under Graduation</option>
+            <option>Post Graduation</option>
+            <option>Graduation</option>
+            <option>Research Scientist</option>
+        </select>
+       </p>
+       <p>Select UR Fav Cricketer:
+        <input type="text" list="myPlayers" placeholder="Select">
+        <datalist id="myPlayers">
+            <option>Sachin Tendulkar</option>
+            <option>Rahul Dravid</option>
+            <option>VVS Laxman</option>
+            <option>Sourav Ganguly</option>
+            <option>Anil Kumble</option>
+            <option>J Srinath</option>
+            <option>V. Prasad</option>
+            <option>Zaheer Khan</option>
+            <option>N. Mongia</option>
+        </datalist>
+       </p>
+       <p>Upload My pic: input <input type="file" placeholder="Select the file"></p>
+       <p>How do U rate in Web Technologies: <input type="range" min="1" max="10"/></p>
+       <p>
+            <button type="submit">Save Changes</button>
+             <button type="reset">Reset</button>
+        </p>
+    </form>
+</html>

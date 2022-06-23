@@ -1,0 +1,17 @@
+What is CSS?
+CSS is a new way of designing HTML pages in a more structured manner. Earlier Html tags had attributes to apply designing like bgcolor, forecolor and many more such attributes. It was very difficult in maintaining the page when it had large content. 
+So W3c provided a new way of applying designs to UR web content.This is CSS. It uses a concept called Stylesheets or simply styles for the html elements. 
+The idea is to cleanly seperate the html tags and styles for the html tags. With CSS, U can reapply the styles for a group of tags, for a kind of tags as well as identifyable tags. It is reusable styles. This is what makes it maintainable and easy to work.
+CSS can be applied at 3 different levels.
+Using inline styling where U apply a style to a specific element using style attribute of the html element. Most of the elements have style attribute that can be set. 
+U can create a set of styles under the style tag in the html doc so that the styles are applicable to the elements of the document. This is internal styling. 
+U can also create a sperate style document with an extension .css and refer it in multiple html documents so that similar or same styles could be applied on all the pages of the website to give an uniform look and feel for the application. This is called as External Styling.
+For a real time web app, html, css and js goes hand in hand. 
+
+Style tag is preferably created in the head section of the html document. This section is not visible to the users and will be refered only by the developers.
+margin is a important attribute of CSS where U wish to provide a small gap b/w the elements and the Main Window. 
+padding is an important attribute to give a gap b/w the content and the element border. This is the interal gap that U provide for the content. 
+
+display property tells the layout of the element. By default certain elements(div, p, li, tables) have block layout, means that the element occupies the complete width of the document. Most have inline layout means that the element will be placed in the same line with the previous element.
+
+new tags of html5 was introduced for better readability. They have the same features like a <div> or a <p>. For eg, <nav> tag is used in that section of the document where U will place links to other documents.  By seeing the nav tag, developers understand that this section contains navigational links. 
