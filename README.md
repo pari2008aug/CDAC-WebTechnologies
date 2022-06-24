@@ -1,5 +1,6 @@
 # CDAC-WebTechnologies
-Training for CDAC-Hyd for June-2022 Batch
+Training for CDAC-Hyd for June-2022 Batch 
+-phani.blrtraining@gmail.com
 
 ## Day 1
 - HTML programming
