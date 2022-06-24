@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selectors Example</title>
+    <style>
+        *{
+            background-color:aqua;
+            font-size:20px;
+            color:darkgreen
+        }
+        p{
+            text-align: center;
+            font-size: 28pt;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        #myContent{
+            text-align: right;
+            font-size: 30pt;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .heading{
+            text-align: center;
+            font-size: xx-large;
+            color:darkgoldenrod;
+        }
+
+        /* section, footer{
+            font-size: 30pt;
+            color:darkgray;
+            font-style: italic;
+        } */
+
+    </style>
+</head>
+<body>
+    <h1 class="heading">Welcome to CSS Training</h1>
+    <p>This is a simple text to display</p>
+    <p id="myContent">This is for a specific content of the document</p>
+    <h1>They dont share the same font</h1>
+    <p class="heading">This content will share the same style as h1 style</p>
+    <div>
+        <section>
+            This section will have this sp style
+        </section>
+        <footer>
+            This is shared along with the section to get group styling
+        </footer>
+    </div>
+</body>
+</html>

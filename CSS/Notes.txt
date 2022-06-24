@@ -14,4 +14,52 @@ padding is an important attribute to give a gap b/w the content and the element 
 
 display property tells the layout of the element. By default certain elements(div, p, li, tables) have block layout, means that the element occupies the complete width of the document. Most have inline layout means that the element will be placed in the same line with the previous element.
 
+point about nav:
 new tags of html5 was introduced for better readability. They have the same features like a <div> or a <p>. For eg, <nav> tag is used in that section of the document where U will place links to other documents.  By seeing the nav tag, developers understand that this section contains navigational links. 
+
+Day 3:
+CSS Selectors: The purpose of the selectors is to select the content that U want to style. It is a part of the CSS Rules set. CSS selectors select the elements based on their id, class, elementname and even attributes. 
+CSS ID Selectors: U can specify the style to a specific element using its id. Id is unique to the document.
+CSS Element Selectors : Use this to apply a common style for all the elements of a certain type.
+CSS Class Selectors : U can create a class(A kind).Class is not the OOP Class. Here class means a kind/type of element. However, U can apply the class to different kinds of elements and use it in UR code. U would create a class in CSS to allow a common style for a bunch of elements, so that all of them maintain the same look and feel, sometimes even functionality. 
+CSS Group selector. Use group selectors for a group of elements within a section of the document. 
+CSS Universal selector is used when U want a common set of styles to be applicable to the whole application. IT uses wild charecter and selects all the elements within it.
+
+U can perform css commenting for sections which u want to comment. /**/ very similar to Java/C++ multiline commenting.
+Tip:Select the area U want to comment, and press Ctrl+k,c to comment and same combinatin replacing c with u for uncommenting in VS Code 
+
+U can set styles to the elements for cursors to be displayed on the element using cursor property.  We recommend to use the cursors to define the mood of the operation that the user is performing. 
+
+Images can be styled in CSS using different requirement based styles. U need a thumbnail for presenting passport size images. 
+U can apply different style for background images and many more. 
+Opacity will make the element loose its tranperency with values set from 0 to 1 in decimal. 0 is for transperant and 1 is for opaque. 
+Exersise: create a rounded images for Ur page containing list of contacts. 
+
+Float property:
+CSS has float property which is a positioning property. It is used to push an element either to left, right and allow elements to wrap around it. It is used in combination of layouts and images. 
+Float takes the following values: left, right, none, initial and inherit. Inherit gets the value from its parent's float value, initial will set the property to its initial value, left and right is used to float the element based on the specified direction and none is the default where no float value is set. 
+
+Position property: The CSS Position property is used to set position for the element so that U can determine where to place the element behind another and can also be used for animation purposes. 
+Static, Fixed, Relative, Absolute are the values for the position property. 
+Static is the default position for all the elements.
+fixed puts the text fixed to the window of the browser, not to the document. It will be relative to the browser window and does not move even if U scroll the window.
+Relative position property is used to set the element relative to its normal position. Use this when U want to move the element from its original location to the new location and it will be based on the original element's position. 
+Absolute position is used to position the element relative to the first parent element's position other than static. Absolute will display the content above the flow of the Document. With this, U can place UR element anywhere within the document and it will sit on top of the flow of the document. 
+
+To position the elements one above the other we use zorder. It defines the stacking level of an element. 
+
+Text formatting:
+For formatting text in html, we can use text based properties that can makeUR text differ in alignment, decoration, transformation, spacing and shadowing. 
+color ang background-color is used to set the font color and its background color respectively.
+Text can be aligned horizontally to left, right, center or justified. When U set the text-align property to justify, each line is stretched so that every line has the same width and both left and right margins are straight.
+To format only the last line, U can set text-align-last property 
+
+Text content can be decorated using text-decoration property, it is recommended to use this instead of the html tags which are obselete.
+
+For text shadow, U can give 4 values: h-shadow, v-shadow, blur radius, color 
+
+Layouts in CSS:
+There are 4 major layouts recommended in CSS:
+Grid, Table, Layout, Box 
+
+Grid can be defined as an layout of multiple sections placed horizontally and vertically.  It will divide the page into multiple regions and will help in organizing the content.

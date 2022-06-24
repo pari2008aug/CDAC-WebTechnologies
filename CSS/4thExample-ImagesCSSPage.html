@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image based Styling</title>
+    <style>
+        img{
+            border: 2px solid blue;
+            border-radius: 15px;
+            padding: 10px;
+        }
+        .row{
+            display: inline-block;
+            font-size: 30pt;
+            color:darkkhaki;
+            vertical-align: center;
+        }
+        .transperant{
+            border: 2px solid blue;
+            border-radius: 15px;
+            padding: 10px;
+            opacity: 0.3;
+        }
+
+        responsive{
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Example of Thumbnail Image</h1>
+    <div class="row">
+        <img src="../HTML/Images/Mangoes.jfif"/>
+        <span>
+            This is about Mangoes for U.
+        </span>
+    </div>
+    <div class="row">
+        <img class="transperant" src="../HTML/Images/Mangoes.jfif"/>
+        <span>
+            This is about Mangoes for U.
+        </span>
+    </div>
+    <div>
+        <img class="responsive" src="../HTML/Images/Mangoes.jfif"/>
+        <span>
+            This is about Mangoes for U.
+        </span>
+    </div>
+</body>
+</html>

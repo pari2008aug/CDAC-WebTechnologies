@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout</title>
+    <style>
+        .main {
+            display: grid;
+            /* grid: auto auto / auto auto auto auto; */
+            grid-template-columns: 1fr 2fr 1fr;
+            grid-template-rows: 100px 300px 100px;
+            grid-gap: 10px;
+            background-color: yellow;
+            padding: 5px;
+        }
+        div{
+            background-color: blue;
+            text-align: center;
+            color: bisque;
+            padding: 10px 10px;
+            font-size: 20pt;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div>Data 1</div>
+        <div>Data 2</div>
+        <div>Data 3</div>
+        <div>Data 4</div>
+        <div>Data 5</div>
+        <div>Data 6</div>
+        <div>Data 7</div>
+        <div>Data 8</div>
+    </div>
+</body>
+</html>
