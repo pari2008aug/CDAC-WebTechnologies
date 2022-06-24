@@ -1,0 +1,22 @@
+Now U will try to make the HTML content to be responsive.It allows to generate dynamic content and Users get interactive data.
+HTML is static. To make it dynamic, we need a scripting language that will execute in the browser of the User(Client). As the code is processed in the client(user) machine, scripting languages are called as Client side Scripting.
+JS is the most popular client side scripting language. 
+Browsers will have an interpretor(Translator) that reads the scripting language code and convert it into text based on the logic that U have applied in the code. This generates the content dynamically. It is created when the page is being viewed is what is called as dynamic content. 
+JS is easy and simple. It does not have heavy syntax. And it is very popular and widely accepted among all the browsers. 
+JS is not Java. JS is an open source coding maintained by ECMA(European computers Manufactures Association). They release stds of JavaScript that browsers will incorporate so that the code works in their browser. 
+How to create JS code?
+U can embedd the JS code in ur html page like css and make it run on the browser. Browsers are the place where UR JS code will run.
+
+To interact with the users, JS gives functions for UI interactions. 
+alert->Is a function that displays a message to the user. When the message box is displayed, the user cannot do any operation on the page until he/she closes it.
+prompt-> Is a function that displayes a question and user can type answer to the question and the input data will be returned by the prompt function.
+confirm->Is a function that displays the message and allows the user to acknowledge it by providing 2 buttons like Ok and cancel.  
+
+Day 4:
+Variables and Consts in JS.
+Data Conversions.
+Conditional Statements in JS. 
+How to create Arrays in JS. 
+How to create classes and objects in jS.
+How to use the objects in a html document. 
+
