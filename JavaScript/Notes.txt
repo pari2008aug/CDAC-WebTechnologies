@@ -7,16 +7,90 @@ JS is not Java. JS is an open source coding maintained by ECMA(European computer
 How to create JS code?
 U can embedd the JS code in ur html page like css and make it run on the browser. Browsers are the place where UR JS code will run.
 
+What is client side scripting?
+Scripts that are executed on the browsers are called as Client side scripting. JS is a client side scripting language.
+
+How to add scripts into html pages?
+Use the <script> to inject the Scripting code in html doc. U can technically place the script anywhere in the html doc. However, it is good practise to place it either at the end of the document just before U close the html tag or place it in header. U can also include external script files that are saved with the respective language extensions. 
+
+Which is the default scripting language for all browsers?
+Since the last 15 yrs, JS has been the default scripting language for all kinds of browsers in the internet world. 
+Earlier web pages, used to have an attribute called type or lang in the script tag. Modren web pages dont need this. 
+
+What is the syntax of JS?
+It follows C++ kind of syntax, however it is not strict type checking like C++. 
+
 To interact with the users, JS gives functions for UI interactions. 
 alert->Is a function that displays a message to the user. When the message box is displayed, the user cannot do any operation on the page until he/she closes it.
 prompt-> Is a function that displayes a question and user can type answer to the question and the input data will be returned by the prompt function.
 confirm->Is a function that displays the message and allows the user to acknowledge it by providing 2 buttons like Ok and cancel.  
-
+------------------------------------------------------------
 Day 4:
+Code structure of JS:
+JS code contains statements or instrutions. Each statement is a command for the interpretor to execute certain action.  
+Each statement is seperated by a ; A line can have multiple statements but should be seperated by a ; JS will internally take line break as a ;. This is called as Automatic semicolon insertion. 
+If a statement is to be ignored, U should place it as comments using single line commenting(//) or a multi line commenting(/* */)
+
 Variables and Consts in JS.
-Data Conversions.
+What are variables and consts in a programming language?
+These are places where we store some data for a brief period of time to do some computation in ur code. They will automatically be destoyed once their scope goes off. Scope is a boundary of the variable where it can exist. 
+If the data is not to be modified, we make them as consts for performance, else we make them as variables. default is variables, consts are prefixed as const. 
+In JS, there are 3 ways to declare data:
+var, let and const. var is the traditional way of creating variables. 
+let and const came up as new way of declaring variables since ES6 version of JS. 
+Latest JS recommends to use let instead of var. 
+The variables in JS hold the data type of what it is assigned while declaring it.  
+
+How are variable type determined in JS?
+variables get their data type based on the value to which it is assigned to. However, internally JS stores the data in 4 formats: numbers, strings, booleans, objects. 
+if a variable is declered but not assigned, it will be undefined. it is wrong to read undefined variables.  We use typeof operator to determine the internal type of the variable.
+
+Is variable declaration mandatory in JS?
+No. Earlier versions of JS did not have the requirement of declaring the variables. This is not a good practise. U should enforce JS to allow the programmers to use only the variables that are declared properly. This can be done by writing a statement called "use strict" at the begining(first line) of the script block. From ES5(2005), JS recommends to use strict way of writing code. 
+
+What is the difference b/w var and let?
+let is the new way of declaring the variables in modren JS. It is safe and scope based. It enforces the rules of modren compiler based programming language rules like scope of the variable and there by providing a clean way of writing code without confusing the developers. 
+Use camel casing for naming the variables in JS. However, U can use sp charecters like $ and _ in UR variable names or function names. Any variable name is a combination of 2 or more words and 1st word's 1st letter will be in smaller case
+and other words 1st letter will be in Upper case.
+eg: firstValueOfTheCode., empName, cstAddress, empSalary;
+variable names are case sensitive in js. 
+U cannot use reserved names:let, return, class, function ==> as they are internal keywords of JS.
+It is recommended to use UPPERCASE for Consts, even though not mandatory. 
+
+
+How to assign strings in JS?
+strings can be assigned using "" or ' '. What ever U start must be ended. 
+Interpolation syntax of ES6: 
+Use back tick to create the string statement and use ${name} to refer the variables within the string literals.
+
+What are the internal data types of JS?
+number, string, boolean, undefined, null, object, bigInt
+
+Data Conversions:
+U can convert the data using the functions of JS. 
+To convert strings to numbers, we use 2 methods: parseInt and parseFloat. parseInt is to convert a string to a whole number and parseFloat is to convert to decimal numbers. 
++ operator is overloaded to do concatination when it works with strings and add when it works with numbers. So if U want to add values of the strings, U should use the data conversion functions. This is not applicable on -, * or / operators. 
+
+If a string is not convertible to a valid number, it will be set as NaN.(Not a Number). U can check if the variable is a number or not using isNaN method which returns true if its not a number. 
+
+If U want to convert any data type variable to a number, we use Number method.
+Number will return valid value if conversion is possible, NaN if not a valid number and 0 if no value is given. 
+
+Variable equivalence in JS:
+we have 2 operators == and === operators. The == operator is used to check the values  only, === operator checks both the data type of the variables as well as the data of the variables. === is used for object comparisions. 
+
 Conditional Statements in JS. 
+if statement that evaluates to a boolean and if true executes a block of clode. 
+else condition will be executed if the if if condition evaluates to false. 
+U could use ? Conditional operator to perform it in single line. 
+for: regular for loop, for..each, for...in and for..of loop. 
+
 How to create Arrays in JS. 
+Arrays work similar to the way U find in other programming languages. [] operator is used to work with arrays. It is easy to work with. Arrays in JS has the features of both traditional arrays and collections. It implies arrays can be dynamic, U can increase or decrease the array size at runtime. 
+
+How to create functions  in JS?
 How to create classes and objects in jS.
 How to use the objects in a html document. 
+
+
 

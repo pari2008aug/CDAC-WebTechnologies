@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Items into Array</title>
+    <script>
+        let basket = [];//create a blank array...
+        function addToBasket() {
+            //Take the input value written into the edit box. 
+            let fruitName = document.getElementById("txtFruit").value;
+            //add the value into the array...
+            basket.push(fruitName);
+            //display the elements of the array in the p of cyan color....
+            let p = document.getElementById("CurrentList");//get the reference of the p element. 
+            p.innerHTML = ""; //remove any existing data displayed in the p....
+            for (const value of basket) {//iterate thru' the basket...
+                p.innerHTML += "<li>" + value + "</li>" //add that item into the p element like a list or just the string...
+            }
+        }//Call this function when the user adds the value and clicks the button...
+
+        function searchRecords() {
+            //take the input
+            let searchValue = document.getElementById("txtSearch").value;
+            //get the subset of the fruits based on the entry...
+            // let subset = basket.filter(function (eachFruit) {
+            //     if (eachFruit.includes(searchValue))
+            //         return true;
+            //     else
+            //         return false;
+            // })
+            //let data = basket.filter((f) =>f.includes(searchValue));//Lambda Expression....
+
+            let subset = [];
+            for(let element of basket){
+                if(element.includes(searchValue))
+                subset.push(element);
+            }
+            //populate it into the same paragraph..
+            //display the elements of the array in the p of cyan color....
+            let p = document.getElementById("CurrentList");//get the reference of the p element. 
+            p.innerHTML = ""; //remove any existing data displayed in the p....
+            for (const value of subset) {//iterate thru' the subset...
+                p.innerHTML += "<li>" + value + "</li>" //add that item into the p element like a list or just the string...
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div>
+        <h1>Fruits in my basket</h1>
+        <p>
+            Fruit Name: <input type="text" placeholder="Enter the Fruit to add" id="txtFruit" />
+            <button type="button" onclick="addToBasket()">Save to Basket</button>
+        </p>
+        <p>Search: <input type="search" placeholder="Search" id="txtSearch" />
+            <button type="button" onclick="searchRecords()">search</button>
+        </p>
+        <p style="background-color: cyan ; height: 200px; width: 200px;" id="CurrentList">
+
+        </p>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statements</title>
+</head>
+<body>
+    <script>
+        "use strict";
+        // alert("Testing 123") 
+        // alert("Another testing!!!!")
+
+        ///declare variables in Js
+        let value1 = 123//Datatype is not required in JS. 
+        let name ="Phaniraj";
+        let canTry = true;
+        let myValue = {"Data" : 123, "Data2":"Phaniraj", "Data3" : true}//object
+        let largeNo = 10n
+        const myName ="Phaniraj";
+        //myName = "Something else";//wrong to reassign consts in JS
+        
+        //mango ="Ratnagiri Mangoes"; ->Errors if used with strict model
+
+//        x = 123; y = 345;
+  //      console.log(x + y);
+
+        var apple;
+        console.log(typeof(value1));//numbers
+        console.log(typeof(name));//strings
+        console.log(typeof(canTry));//boolean
+        console.log(typeof(myValue));//object
+        console.log(typeof(apple)); //undefined
+        console.log(typeof(largeNo)); //undefined
+
+        let institute = 'CDAC-Hyderabad';
+        let location = "Ameerpet"
+
+        //console.log("The type of mango we have is " + mango);
+
+        //////////////////Declare var and let///////////////
+        var temple = "Testing code";//old format did not have scope based in it. 
+        //let temple = "Sri Vishnu temple";//var will not ensure the redeclaration.
+        //let temple ="Somethig else"
+        console.log(temple, temple)
+    </script>
+</body>
+</html>

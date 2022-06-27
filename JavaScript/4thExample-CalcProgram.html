@@ -1,0 +1,38 @@
+<script>
+    function example(){
+    let v1 = parseFloat(prompt("Enter the 1st value"));
+    if(isNaN(v1)){
+        alert("Not a valid number, cannot do the job");
+        return;
+    }
+    let v2 = parseFloat(prompt("Enter the 2nd value"));
+    if(isNaN(v2)){
+        alert("Not a valid number, cannot do the job");
+        return;
+    }
+        // console.log(`The data type: ${typeof (v1)}`);
+        // console.log(`The data type: ${typeof (v2)}`);
+        let operator = prompt("Enter the operator as +, - , X or /");
+        let result;
+        switch (operator) {
+        case "+": result  = v1 + v2; break;
+        case "-": result = v1 - v2; break;
+        case "X": result = v1 * v2; break;
+        case "/": result = (v1 / v2); break;
+        default: console.log("Invalid Choice");
+        }
+        if(isNaN(result))
+         console.log("Not a valid result")
+        else
+         console.log(result);
+    }
+    example();
+    console.log(Number(true));
+    console.log(Number(new Date()))
+    console.log(Number("123"))
+
+    //////////////////////Equivalence in JS/////////////
+    console.log(123 == "123"); //true: 123 is number and "123" is string. 
+    console.log(123  === "123"); //false: 
+    
+</script>

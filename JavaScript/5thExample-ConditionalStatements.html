@@ -1,0 +1,41 @@
+<script>
+    function ifCondition(){
+        let age = prompt("Enter the age");
+        let accept = age > 20 ? "Is accepted" : "Not Accepted"; //Conditional operator is a simpler way of doing things of if..else condition. It is also called as Ternery operator as it involves 3 operands: condition, value for true, value for false. statement before the : is executed for true(if) and statement after the : is executed for false(else). 
+        console.log(accept);
+    }//call this function in the code to test it....
+
+    //////////////Loops to perform a set of operations repeatedly//////////////
+    //while uses a precondition concept..
+    function whileLoopDemo(){
+        let i = 0;    
+        while(i < 3){
+            console.log(`This is really small for ${i}th time`);
+            i++;
+        }
+        console.log("After the loop exits")
+    }
+    function doWhileDemo() {
+        //Here the code has a chance to execute atleast once and then check for the condition. If true will get into loop else exits the loop.... 
+        let condition = false;
+        do {
+            let res = prompt("Enter the role");
+            if( res === "Trainer" || res === "Trainee"){
+                condition = false;
+            }else condition = true;
+        } while (condition);
+    };
+
+    function forLoopDemo(){
+        //loops thru a definte no of times unless U deliberately exit in any of the internal conditions. 
+        // for (let i = 0; i < 10; i++) {
+        //     console.log(i)
+        // }
+        let i = 0;
+        for(; i < 4; ){ //initially i is 0, it steps by 1 and condition is < 4
+             console.log(i);   
+        } 
+        //while(i < 4) ....
+    }
+    forLoopDemo();
+</script>

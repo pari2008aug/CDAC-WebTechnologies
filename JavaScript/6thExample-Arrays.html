@@ -1,0 +1,27 @@
+<script>
+    //2 syntaxes for array. One using Array object and other using [] operator. 
+    let fruits = new Array();//size will be 0...
+    fruits.push("Apples"); //Add the item to the bottom of the list. 
+    fruits.push("Mangoes");
+    fruits.push("Oranges");
+    fruits.push("PineApples");
+    fruits.push("Bananas");
+    console.log("The size of the array is " + fruits.length)
+    fruits.unshift("Gauvas");//add the item to the begining of the list. Performance wise it is not so good. In this case, lot of in-memory operations will be happen like shifting all the other elements to the next position. 
+
+    ////////////////Using for loop///////////////////////////////////
+    // for(let index =0; index < fruits.length; index++){
+    //     console.log(fruits[index]);
+    // }
+    ////////////////////Using for..of loop//////////////////////
+    for(let val of fruits) console.log(val) //for of is very similar to VB's foreach statement and is very popular now in Java as well. 
+    //////////////////////Using for...in loop/////////////////
+    for(let index in fruits) console.log(`The ${fruits[index]} is in the index ${index}`);    
+
+    ///////////////////////////////Using for each in JS. foreach is a function of the Array class that has the combination of both in and of ////////////
+    fruits.forEach((value, index) => {
+        console.log(value + "using value itself");
+        console.log(fruits[index] + " using index");
+    })
+
+</script>
