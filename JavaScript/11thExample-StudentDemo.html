@@ -40,7 +40,7 @@
             document.getElementById("tblRecords").innerHTML += ex1.toStringFormat();
             clearInputs();
         }
-
+/*
         function saveToDatabase(){
             let id = $get("txtId");
             let name = $get("txtName");
@@ -52,7 +52,7 @@
             alert("Student is added to the database!!!!");
             displayRecords();//gets the data and adds them to the table..
         }
-
+*/
         function displayRecords(){
            let tbl = document.getElementById("tblRecords");//get the ref of table
            tbl.innerHTML = "<tr><th>StudentID</th><th>StudentName</th><th>StudentAddress</th><th>Student Age</th></tr>";//old data is removed from the table..
@@ -74,7 +74,7 @@
             <input type="text" placeholder="Enter the Address" id="txtAddress"/>     
             <input type="number" placeholder="Enter the Age" id="txtAge"/>
             <!-- <button type="button" onclick="onSaveAndDisplay()">Save changes</button>      -->
-            <button type="button" onclick="saveToDatabase()">Save changes</button>     
+            <button type="button">Save changes</button>     
         </div>
     </div>
 
