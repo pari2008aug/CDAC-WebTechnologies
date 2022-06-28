@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <script src="./scripts/mathFunc.js"></script><!--Include external Js files-->
+    <script>
+        function onBtnClick(){
+            //Get the input values.
+            let v1 = parseFloat(document.getElementById("txtV1").value);
+            let v2 = parseFloat(document.getElementById("txtV2").value);
+            let operand = document.getElementById("operand").value;
+            //call the processMethod with the args as the input values..
+            let result = processMethod(v1, v2, operand);
+            //get the result..
+            //display the result in the span with id called spResult 
+            let spRes = document.getElementById("spResult");
+            spRes.innerText = result;   
+        }
+    </script>    
+</head>
+<body>
+    <h1>Math Calc Program</h1>
+    <hr>
+    <div>
+        <p><input id="txtV1" type="number" placeholder="Add First Value"></p>
+        <p><input id="txtV2" type="number" placeholder="Add Second value"></p>
+        <p>Select the option:
+            <select id="operand">
+                <option>---Select an option--s-</option>
+                <option>+</option>
+                <option>-</option>
+                <option>*</option>
+                <option>/</option>
+            </select>
+        </p>
+        <p><input type="button"  onclick="onBtnClick()" value="Get Result"></p>
+        <p>The Result: <span id="spResult"></span></p>
+    </div>      
+</body>
+</html>

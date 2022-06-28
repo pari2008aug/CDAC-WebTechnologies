@@ -88,8 +88,39 @@ for: regular for loop, for..each, for...in and for..of loop.
 How to create Arrays in JS. 
 Arrays work similar to the way U find in other programming languages. [] operator is used to work with arrays. It is easy to work with. Arrays in JS has the features of both traditional arrays and collections. It implies arrays can be dynamic, U can increase or decrease the array size at runtime. 
 
-How to create functions  in JS?
-How to create classes and objects in jS.
+What are functions?
+A group of statements that are expected to be executed frequently in ur application. It is grouped by giving a unique name and can be used repeatedly across the application by just placing the name of the function on which the program will call the statements. 
+We create functions only when U have a set of statements that are executed frequently within ur application. U also create functions for better modularity. Grouping a set of statements to perform one task. It is also created for better readability and management. 
+
+How to create functions in Js?
+There are more than 3 ways of creating functions in JS. 
+Functions with name
+Functions as variables
+Anonymous Functions/Lambda Functions. 
+U can create the functions in a seperate JS file and consume it in the html doc. This will be more readable and cleanly seperated. JS files are text files saved with an extension .js.
+
+How to use the external js files in Ur html doc?
+<script src="path_of_the_file"></script>
+After that statement, U can open a new script tag and call the methods in it. 
+
+NOTE:
+innerText vs. innerHTML ->Both these methods are used to insert content into container elements like p, div, span, a etc. If your content contains html tags, then U should interpret them and display the content. In this case, U will use innerHTML. If the content has only text and no need to interpret the markup, then we will go for innerText. 
+For inputs, it is value not any of the above. 
+Exercise: 
+1. Create a Loan calculator app that takes inputs from the user and displays the interest amount, the principal amount and other details. 
+2. Create a Temperature conversion Program that takes inputs of a certain unit of temperature and convert it into other unit.Cel vs. Farenheit. 
+3. Create a Shoping basket app that takes inputs from the user on the items he/she will purchase and display them in the form an ordered List inside a div element. 
+4. Create a Data Entry Page that takes inputs of the Customer like his name, address, telephone and it should display the details into a table as a single roww. All customers info will be added as seperate rows. Each row will contain one customer information. 
+
+What is a class? A class is a User Defined Data type(UDT) that has multiple kinds of data and functions to manipulate the data. It comes with a host of features of OOP with it. A class once created, can be used to create variables of that class(DataType) called objects. object is simply an instance of the class(A variable of that class with a sp set of features in it).
+object is a reference type, it means that the data it holds will be the address of the object, not the details of the data it has.
+
+How to create classes and objects in js?
+There are 3 ways of creating classes in Js.
+Singleton classes which is the traditional way of creating objects in Js. 
+Object variables using function keyword.(Old syntax of creating classes)
+class keyword which was introduced in ES6.
+
 How to use the objects in a html document. 
 
 

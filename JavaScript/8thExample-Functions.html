@@ -1,5 +1,30 @@
 <script>
-    function addFunc(val1, val2){
-        
-    }
+    //Named methods....
+   function simpleFunc(){//Commonly used syntax.
+    console.log("Simple Function is called")
+   }
+
+   //Functions as variables. Very old syntax
+   let myFunc = function(){
+    console.log("Functions as variables")
+   }
+
+   //Functions as anonymous methods/lambda Expressions..
+   let lambdaFunc = () => console.log("Lambda Method which is simplier way of creating single line methods")
+   
+   function addFunc(v1, v2){
+    if((isNaN(v1)) || (isNaN(v2)))
+      throw "Invalid values"//raise an exception and exit the function. throw is a jump statement.
+    return v1 + v2;
+   } 
+
+   let subFunc = (v1, v2) => v1 - v2;//Dont use return keyword while creating lamda methods. 
+
+   simpleFunc();
+   myFunc();
+   lambdaFunc();
+   let res = addFunc(123,234)
+   console.log(res);
+   res = subFunc(123,234)
+   console.log(res);
 </script>

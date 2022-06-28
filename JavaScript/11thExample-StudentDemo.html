@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Database</title>
+    <link rel="stylesheet" href="./styles/mainStyle.css">
+    <script src="./scripts/studentRegistration.js"></script>
+    <script>
+        let db = new StudentDb();//create the instance of the Repository class
+        //add objects to the array using the register method..
+        db.register(new Student(123, "Phaniraj", "Bangalore", 45));
+        db.register(new Student(124, "Sharan", "Hyderabad", 40));
+        db.register(new Student(125, "Indrani", "Bangalore", 42));
+        db.register(new Student(126, "Jayashree", "Bangalore", 35));
+        //custom functions:
+        let $get = (elementId) => document.getElementById(elementId).value;
+        //set is used to set values other than ""
+        let $set = (id, value ) => document.getElementById(id).value = value;
+        //clear only clears the content by setting it to ""
+        let $clear = (id) => $set(id, "");
+
+        function clearInputs(){
+            $clear("txtId");
+            $clear("txtName");
+            $clear("txtAddress");
+            $clear("txtAge");
+        }
+        //Function called when the user gives the inputs and tries to save the record
+        function onSaveAndDisplay(){
+            //take the input values.
+            let id = $get("txtId");
+            let name = $get("txtName");
+            let address = $get("txtAddress");
+            let age = $get("txtAge");
+            //create the student object...
+            let ex1 = new Student(id, name, address, age);
+            //display the object in the table
+            document.getElementById("tblRecords").innerHTML += ex1.toStringFormat();
+            clearInputs();
+        }
+
+        function saveToDatabase(){
+            let id = $get("txtId");
+            let name = $get("txtName");
+            let address = $get("txtAddress");
+            let age = $get("txtAge");
+            //create the student object...
+            let ex1 = new Student(id, name, address, age);
+            db.register(ex1);
+            alert("Student is added to the database!!!!");
+            displayRecords();//gets the data and adds them to the table..
+        }
+
+        function displayRecords(){
+           let tbl = document.getElementById("tblRecords");//get the ref of table
+           tbl.innerHTML = "<tr><th>StudentID</th><th>StudentName</th><th>StudentAddress</th><th>Student Age</th></tr>";//old data is removed from the table..
+           let records = db.getAll();//get the records...
+
+           for (const student of records) {
+            tbl.innerHTML += student.toStringFormat();
+           }
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <h2>Student Registration System</h2>
+        <hr>
+        <div>
+            <input type="number" placeholder="Enter the Id" id="txtId"/>     
+            <input type="text" placeholder="Enter the Name" id="txtName"/>     
+            <input type="text" placeholder="Enter the Address" id="txtAddress"/>     
+            <input type="number" placeholder="Enter the Age" id="txtAge"/>
+            <!-- <button type="button" onclick="onSaveAndDisplay()">Save changes</button>      -->
+            <button type="button" onclick="saveToDatabase()">Save changes</button>     
+        </div>
+    </div>
+
+    <div>
+        <h2>List of Students with Us!!!!</h2>
+        <hr>
+        <button onclick="displayRecords()">Get Records</button>
+        <table border="1" width="100%" id="tblRecords">
+            
+        </table>
+    </div>
+</body>
+</html>

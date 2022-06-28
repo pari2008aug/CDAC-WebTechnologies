@@ -1,0 +1,23 @@
+*{
+    color: blueviolet;
+    background-color: lightblue;
+}
+
+h1, h2{
+    text-align: center;
+    font-size: 34pt;
+    padding: 5px;
+    margin: 5px;
+}
+input{
+    margin: 5px;
+    border: 2px solid lightskyblue;
+    border-radius: 5px;
+    background-color: antiquewhite;
+    color:brown
+}
+div{
+    width: 45%;
+    vertical-align: top;
+    display: inline-block;
+}
