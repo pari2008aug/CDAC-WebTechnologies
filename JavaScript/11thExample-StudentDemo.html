@@ -28,6 +28,7 @@
             $clear("txtAge");
         }
         //Function called when the user gives the inputs and tries to save the record
+        //this was an example for single record...
         function onSaveAndDisplay(){
             //take the input values.
             let id = $get("txtId");
@@ -40,19 +41,22 @@
             document.getElementById("tblRecords").innerHTML += ex1.toStringFormat();
             clearInputs();
         }
-/*
-        function saveToDatabase(){
+
+        function saveRecord(){
+            //take inputs from the user
             let id = $get("txtId");
             let name = $get("txtName");
             let address = $get("txtAddress");
             let age = $get("txtAge");
-            //create the student object...
-            let ex1 = new Student(id, name, address, age);
-            db.register(ex1);
-            alert("Student is added to the database!!!!");
-            displayRecords();//gets the data and adds them to the table..
+            //create a new student object with the input data.
+            let obj = new Student(id, name, address, age);
+            //add the student to the db object using register function. 
+            db.register(obj); 
+            clearInputs();
+            alert("Student is registered with us!!!") 
+            displayRecords();//Refreshing UR table with the live data.        
         }
-*/
+
         function displayRecords(){
            let tbl = document.getElementById("tblRecords");//get the ref of table
            tbl.innerHTML = "<tr><th>StudentID</th><th>StudentName</th><th>StudentAddress</th><th>Student Age</th></tr>";//old data is removed from the table..
@@ -61,6 +65,20 @@
            for (const student of records) {
             tbl.innerHTML += student.toStringFormat();
            }
+        }
+
+        function deleteFunc(){
+            //get the id of the student to delete from the input
+            let id = $get("txtDelete");
+            //call the db's delete fn with id passed as arg.
+            try {
+                db.delete(id);
+                alert("Student with Id " + id + " is deleted successfully") 
+            } catch (error) {
+                alert(error);
+            }
+            //refresh the table after deletion.
+            displayRecords();
         }
     </script>
 </head>
@@ -74,17 +92,24 @@
             <input type="text" placeholder="Enter the Address" id="txtAddress"/>     
             <input type="number" placeholder="Enter the Age" id="txtAge"/>
             <!-- <button type="button" onclick="onSaveAndDisplay()">Save changes</button>      -->
-            <button type="button">Save changes</button>     
+            <button type="button" onclick="saveRecord()">Save changes</button>     
         </div>
     </div>
 
     <div>
         <h2>List of Students with Us!!!!</h2>
         <hr>
-        <button onclick="displayRecords()">Get Records</button>
+        <button onclick="displayRecords()">Refresh</button>
         <table border="1" width="100%" id="tblRecords">
             
         </table>
+    </div>
+
+    <div>
+            <p>
+            <input width="200px" type="number" placeholder="Enter the ID of the Student to Delete" id="txtDelete"/>
+            <button onclick="deleteFunc()">Delete</button>
+        </p>
     </div>
 </body>
 </html>

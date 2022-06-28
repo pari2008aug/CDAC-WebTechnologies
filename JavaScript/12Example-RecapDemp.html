@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Working with arrays</title>
+    <script>
+        let myData = [];
+        function onAdd(){
+            let inputvalue = document.getElementById("txtAdd").value;
+            myData.push(inputvalue);
+            display();
+        }
+
+        function display(){
+            let lst = document.getElementById("lstData");
+            lst.innerHTML = ""
+            for (const item of myData) {
+                lst.innerHTML += `<li>${item}</li>`
+            }
+        }
+
+        function onDelete(){
+            let id = prompt("Enter the Index to delete");
+            myData.splice(id - 1, 1 );
+            display();
+        }
+    </script>
+</head>
+<body>
+    <input type="text" placeholder="Add Data" id="txtAdd"><button onclick="onAdd()">Add</button>
+    <ol id="lstData">
+
+    </ol>
+    <p>
+        <button onclick="onDelete()">Delete</button>
+    </p>
+</body>
+</html>
