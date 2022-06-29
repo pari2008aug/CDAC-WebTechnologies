@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./lib/jquery-3.6.0.min.js"></script>
+    <title>Document</title>
+    <script>
+        $(document).ready(function(){
+            $("#txtName").css("background-color", "red")
+            $(".row").mouseover(function(){
+                $(this).css("background-color", "yellow");
+                $(this).css("color", "red");
+            }).mouseleave(function(){
+                $(this).css("background-color", "white");
+                $(this).css("color", "black");
+            })
+        })
+    </script>
+</head>
+<body>
+    <div>
+        <input id="txtName" placeholder="Enter the Name"/>
+        <button>Display</button>
+    </div>
+    <div>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>EmpID</th>
+                    <th>EmpName</th>
+                    <th>EmpAddress</th>
+                    <th>EmpSalary</th>
+                </tr>
+                <tr class="row">
+                    <td>123</td>
+                    <td>Name</td>
+                    <td>Address</td>
+                    <td>45000</td>
+                </tr>
+                <tr class="row">
+                    <td>123</td>
+                    <td>Name</td>
+                    <td>Address</td>
+                    <td>45000</td>
+                </tr>
+                <tr class="row">
+                    <td>123</td>
+                    <td>Name</td>
+                    <td>Address</td>
+                    <td>45000</td>
+                </tr>
+                <tr class="row">
+                    <td>123</td>
+                    <td>Name</td>
+                    <td>Address</td>
+                    <td>45000</td>
+                </tr>
+            </thead>
+        </table>
+    </div>
+</body>
+</html>

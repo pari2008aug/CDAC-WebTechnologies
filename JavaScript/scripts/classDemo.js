@@ -9,6 +9,11 @@ let employee = {};//blank object. this creates a Singleton object. Only one obje
 employee.empId = 123;//U add the properties/fields to it.
 employee.empName = "Phaniraj";
 employee.empAddress = "Bangalore"
+
+for (const key in employee) {
+    console.log(`The Name of the property: ${key} and its value: ${employee[key]}`);
+}
+
 //creating function in a singleton object
 employee.display = function(){
     let value = `The name:${this.empName} is from ${this.empAddress} and has Id:${this.empId}`;

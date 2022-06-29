@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Storing data</title>
+    <script>
+        function onSave(){
+            //New feature of HTML 5 is a concept called localstoreage
+            localStorage.setItem("name", document.getElementById("txtName").value) 
+            localStorage.setItem("address", document.getElementById("txtAddress").value) 
+            localStorage.setItem("email", document.getElementById("txtEmail").value) 
+        }
+
+        function onSaveAsObject(){
+            let obj ={};//singleton...
+            obj.name = document.getElementById("txtName").value
+            obj.address = document.getElementById("txtAddress").value
+            obj.email = document.getElementById("txtEmail").value
+            let jsonData = JSON.stringify(obj);
+            localStorage.setItem("userDetails", jsonData);
+        }
+
+        function onLoad(){
+            // if(localStorage.getItem("name") != undefined){
+            //     let p = document.getElementById("pDetails");
+            //     let name = localStorage.getItem("name")
+            //     let email = localStorage.getItem("email");
+            //     let address = localStorage.getItem("address");
+            //     let text = `<b>The name:${name}</b> from ${address} is available at ${email}`;
+            //     p.innerHTML = text
+            // }
+            let p = document.getElementById("pDetails");
+            if(localStorage.getItem("userDetails") != undefined){
+                let obj = JSON.parse(localStorage.getItem("userDetails"));
+                let name = obj.name
+                let email = obj.email;
+                let address = obj.address;
+                let text = `<b>The name:${name}</b> from ${address} is available at ${email}`;
+                p.innerHTML = text
+            }else{
+                p.innerHTML = "<b>No Information is stored!!!"
+            }
+        }
+    </script>
+</head>
+<body onload="onLoad()">
+    <div>
+        <h1>Store the information</h1>
+        <input type="text" id="txtName" placeholder="Enter the Name"/>
+        <input type="text" id="txtAddress" placeholder="Enter the Address"/>
+        <input type="text" id="txtEmail" placeholder="Enter the Email"/>
+        <button onclick="onSaveAsObject()">Store info</button>
+    </div>
+    <div>
+        <h2>Details of the stored person:</h2>
+        <p id="pDetails"></p>
+    </div>
+</body>
+</html>

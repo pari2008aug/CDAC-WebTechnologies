@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <script>
+        function eventHandler() {
+            let btn = document.getElementById("btnClick");
+            if (btn.innerText === "Click Me!!!")
+                btn.innerText = "I was clicked";
+            else
+                btn.innerText = "Click Me!!!";
+        }
+
+        function onMouseMove(){
+            document.getElementById("btnClick").style.backgroundColor = "blue"
+        }
+        function onMouseLeave() {
+            document.getElementById("btnClick").style.backgroundColor = "grey"           
+        }
+    </script>
+</head>
+<body>
+    <button id="btnClick" onmouseleave="onMouseLeave()" onmousemove="onMouseMove()" onclick="eventHandler()" >Click Me!!!</button>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Storing data</title>
+    <script>
+        let data = [];//create the blank array..
+        //Helper function to get the existing data..
+        function getOldData(){
+            if(localStorage.getItem("AllData") != undefined){
+                data = JSON.parse(localStorage.getItem("AllData"));
+            }else{
+                data = [];
+            }
+            return data;
+        }
+        //click event handler for button...
+        function onSaveAsArray(){
+            //get the existing data from the localstorage.
+            data = getOldData();
+            //create a singleton object.
+            let obj = {};
+            //set values to it.
+            obj.name = document.getElementById("txtName").value
+            obj.address = document.getElementById("txtAddress").value
+            obj.email = document.getElementById("txtEmail").value
+            //add to the data.
+            data.push(obj);
+            //stringify
+            let jsonData = JSON.stringify(data);
+            //set the value to the localstorage.
+            localStorage.setItem("AllData", jsonData)
+        }
+        
+        function onLoad(){
+            let p = document.getElementById("pDetails");
+            if(localStorage.getItem("AllData") != undefined){
+                data = JSON.parse(localStorage.getItem("AllData"));
+                for (const obj of data) {
+                    let name = obj.name
+                    let email = obj.email;
+                    let address = obj.address;
+                    let text = `<b>The name:${name}</b> from ${address} is available at ${email}<br/>`;
+                    p.innerHTML += text 
+                }
+            }else{
+                p.innerHTML = "No Details are set!!!"
+            }
+        }
+    </script>
+</head>
+<body onload="onLoad()">
+    <div>
+        <h1>Store the information</h1>
+        <input type="text" id="txtName" placeholder="Enter the Name"/>
+        <input type="text" id="txtAddress" placeholder="Enter the Address"/>
+        <input type="text" id="txtEmail" placeholder="Enter the Email"/>
+        <button onclick="onSaveAsArray()">Store info</button>
+    </div>
+    <div>
+        <h2>Details of the stored person:</h2>
+        <p id="pDetails"></p>
+    </div>
+</body>
+</html>

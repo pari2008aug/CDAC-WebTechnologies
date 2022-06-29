@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="./lib/jquery-3.6.0.min.js"></script>
+    <script src="JScode.js"></script>
+    <title>Employee Dashboard</title>
+    <script>
+        //Mob:9945205684
+        let repo = new empRepo();
+        function displayRecords(){
+            let empList = repo.getAll();
+            $.each(empList, (i, v)=>{
+                let row = `<tr><td>${v.id}</td><td>${v.name}</td><td>${v.address}</td><td><a href="#">Edit</a></td></tr>`
+                $("table").append(row)
+            })
+        }
+        function initialize() {
+            $("div").hide(2000);
+            $("a:first").click(function(){
+                $("div").hide(2000);
+                $("div:first").show(2000);
+                displayRecords();//function that populates the data into the table
+            })
+            $("a:eq(1)").click(function(){
+                $("div").hide(2000);
+                $("div:eq(2)").show("2000");
+            })
+            $("a:eq(2)").click(function(){
+                $("div").hide(2000);
+                $("div:last").show(2000);
+            }) 
+        }
+        $(document).ready(function(){
+            initialize();
+        })
+    </script>
+</head>
+<body>
+    <h1>Employee Management System</h1>
+    <nav>
+        <a href="#">Display</a>
+        <a href="#">Add New</a>
+        <a href="#">Delete</a>
+    </nav>
+    <div>
+        <h2>Table of Records</h2>
+        <table border="1" width="100%">
+            <tr>
+                <th>EmpID</th>
+                <th>Emp Name</th>
+                <th>Emp Address</th>
+                <th>Options</th>
+            </tr>
+        </table>
+    </div>
+    <div>
+        <h2>Edit Details</h2>
+    </div>
+    <div>
+        <h2>Add New Record</h2>
+    </div>
+    <div>
+        <h2>Delete Record</h2>
+    </div>
+</body>
+</html>

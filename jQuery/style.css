@@ -1,0 +1,23 @@
+div{
+    background-color: brown;
+    color:antiquewhite;
+    width: 45%;
+    height: 350px;
+    display: inline-block;
+    margin: 5px;
+}
+nav{
+    height: 50px;
+    background-color: coral;
+    text-align: center;
+    padding-top: 15px;
+}
+a{
+    display: inline-block;
+    width: 100px;
+    height: 40px;
+    background-color: steelblue;
+    color:beige;
+    text-align: center;
+    vertical-align: center;
+}

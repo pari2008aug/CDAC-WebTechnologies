@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        function getCurrentDate(){
+            let dt = new Date();//returns the current system date...
+            let info = `${dt.getDate()}/${dt.getMonth() + 1}/${dt.getFullYear()}`;
+            return info;
+        }
+        document.write(new Date())
+        let dt = new Date();
+        document.write("<p>" + new Date() +"</p>");
+        document.write("<p>" + dt.getDate() +"</p>");
+        document.write("<p>" + (dt.getMonth() + 1) +"</p>");
+        document.write("<p>" + dt.getFullYear() +"</p>");
+        document.write("<p>" + getCurrentDate() +"</p>");
+        
+        function onSetDate(){
+            
+            let val = document.getElementById("txtDt").value;
+            let dt = new Date(val);
+            document.write("<hr/>")
+            document.write("<p>" + dt.getDate() +"</p>");
+            document.write("<p>" + (dt.getMonth() + 1) +"</p>");
+            document.write("<p>" + dt.getFullYear() +"</p>");
+            document.write("<p>" + getCurrentDate() +"</p>");  
+        }
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <input type="date" id="txtDt"/><button onclick="onSetDate()">Set Date</button>
+    </div>
+</body>
+</html>

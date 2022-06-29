@@ -4,10 +4,46 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        div{
+            background-color: brown;
+            color:antiquewhite;
+            width: 20%;
+            height: 200px;
+            display: inline-block;
+            margin: 5px;
+        }
+    </style>
     <script src="./lib/jquery-3.6.0.min.js"></script>
+    <script>
+        function whenReady(){
+            alert("Testing jQuery")
+        }
+        //$(document).ready(whenReady);//Do not put parenthesis when U set the function name
+        //Using anonymous methods instead of creating explicit functions with name
+        $(document).ready(function(){
+            //alert("Testing doc using Anonymous method")
+            $("div").mousemove(function(){
+                $(this).css("background-color", "lightblue")
+            }).mouseleave(function(){
+                $(this).css("background-color", "brown")
+            })
+        })
+    </script>
     <title>Document</title>
 </head>
 <body>
-    
+    <div>
+        Some content for Div1
+    </div>
+    <div>
+        Some content for Div2
+    </div>
+    <div>
+        Some content for Div3
+    </div>
+    <div>
+        Some content for Div 4
+    </div>
 </body>
 </html>
