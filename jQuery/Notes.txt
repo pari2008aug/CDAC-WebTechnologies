@@ -1,0 +1,6 @@
+jQuery:
+jQuery is a JS single file library that is used to develop Dynamic web content like JS. It is designed to make "Write less, do more " feature. 
+Features that used to take lot of coding in regular JS can be achieved with very less code using jQuery. jQuery is used mainly to work on DOM and Ajax calls.
+jquery is nothing but JS, it comes with set of APIs that U can use in JS. 
+jQUery lib can be downloaded from its website. U can also allow the app to download while in production instead of you maintaining it. This is called CDN(Content delivery Network)
+
