@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnimationDemo</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="./lib/jquery-3.6.0.min.js"></script>
+    <script>
+        function slideDemo(){
+            $("div:first>h1").click(function(){
+                $("div:first>p").slideUp(2000);
+            })
+            $("div:first>span").click(function(){
+                $("div:first>p").slideDown(2000);
+            })
+        }
+
+        function fadeDemo(){
+            $("div:first>h1").click(function(){
+                $("div:first>p").fadeOut(2000);//hide
+            })
+            $("div:first>span").click(function(){
+                $("div:first>p").fadeIn(2000);//show
+            })
+        }
+
+        function animateDemo(){
+            $("div:first>h1").click(function(){
+                $("div:first>p").animate({ height: "10px"}, 2000);//hide
+            })
+            $("div:first>span").click(function(){
+                $("div:first>p").animate({height:"200px"}, 2000);
+            })
+        }
+        $(document).ready(function(){
+            //slideDemo();
+            //fadeDemo();
+            animateDemo();
+        })
+    </script>
+</head>
+<body>
+    <div>
+        <h1>Header Section </h1><span>+</span>
+        <hr>
+        <p style="height: 100%; width:100%; color: brown; background-color: blanchedalmond; padding: 5px;">
+           Some content 
+        </p>
+    </div>
+</body>
+</html>

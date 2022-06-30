@@ -12,12 +12,36 @@
         //Mob:9945205684
         let repo = new empRepo();
         function displayRecords(){
+            let selectedEmp;
             let empList = repo.getAll();
+            $("table").find("tr:gt(0)").remove();
             $.each(empList, (i, v)=>{
-                let row = `<tr><td>${v.id}</td><td>${v.name}</td><td>${v.address}</td><td><a href="#">Edit</a></td></tr>`
+                let row = `<tr><td>${v.id}</td><td>${v.name}</td><td>${v.address}</td><td><a data-empid =${v.id}  class="edit" href="#">Edit</a></td></tr>`
                 $("table").append(row)
+                $(".edit").click(function(){
+                    //get the id from the custom atribute and fetch the emp Record matching to that id.  
+                    let id = $(this).attr("data-empid");
+                    try {
+                        selectedEmp = repo.find(id);//get the matching emp record
+                        displaySelectedEmp(selectedEmp);//display the details in the text boxes....
+                    } catch (error) {
+                        alert(error);
+                    }
+                })
             })
         }
+        //Helper function to display the details of the emp in the edit boxes
+        function displaySelectedEmp(emp){
+            if(emp == undefined){
+                console.log("the emp details are not selected")
+                return;
+            }
+            $("div:eq(1)").show(2000);
+            $("#spEditId").text(emp.id);
+            $("#txtEditName").val(emp.name)
+            $("#txtEditAddress").val(emp.address)
+        }
+
         function initialize() {
             $("div").hide(2000);
             $("a:first").click(function(){
@@ -33,6 +57,25 @@
                 $("div").hide(2000);
                 $("div:last").show(2000);
             }) 
+
+            $("div:eq(1)>button").click(function(){
+                //get the values from the input tags.
+                let id = $("#spEditId").text();
+                let name = $("#txtEditName").val();
+                let address = $("#txtEditAddress").val();
+                //create the new employee object.
+                let emp = new employee(id, name, address);
+                //call the update method of the repo object.
+                try {
+                    repo.update(emp);
+                    alert("Employee is updated properly")
+                } catch (error) {
+                    alert(error)
+                }
+                //alert message and close the div
+                //create a function called clearText and clear the data and call the function here...
+                $("div").hide(2000);
+            })
         }
         $(document).ready(function(){
             initialize();
@@ -59,6 +102,13 @@
     </div>
     <div>
         <h2>Edit Details</h2>
+        <hr> 
+        <section>
+            <p>EmpID:<span id="spEditId"></span></p>
+            <p>Employee Name: <input type="text" id="txtEditName"/>  </p>
+            <p>Employee Address: <input type="text" id="txtEditAddress"/>  </p>
+        </section>   
+        <button id="btnUpdate">Update</button>
     </div>
     <div>
         <h2>Add New Record</h2>

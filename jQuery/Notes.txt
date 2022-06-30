@@ -12,3 +12,10 @@ By element Name: It refers to all elements of the name in the document.
 By Id: U refer the element by Id using a prefix #.
 By ClassName: U refer the elements of a certain class by prefixing . with their names
 
+There are 3 ways U can show and hide contents in jQuery.
+hide and show method.
+fadeOut and fadeIn
+slideDown and slideUp: the height property will be reduced slowly and finally set its height property to 0. toggle feature will do the opposite of the current status(either up or down)
+
+fadeIn feature and hiding feature are similar. The fadeIn feature will animate the opacity property of the element for a specific duration and when the opacity becomes 0, it will remove the object, 
+hide and show will animate the size property of the element and once the size becomes 0 it will hide or show the element. 

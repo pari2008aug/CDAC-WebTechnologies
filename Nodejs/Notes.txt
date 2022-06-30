@@ -1,0 +1,7 @@
+Nodejs is a Out of browser JS platform where U can execute JS code like a server side Environment. U can run the JS from a terminal of UR OS. U can develop server side code as well as develop web apps with little infrastructure.
+U can create JS apps like File read/write, database access, socket programming, web applications and many more. 
+Nodejs has its own community that provides ready to use libraries or packages for App development other than what the nodejs in its installation provides. It is called NPM(Node Package Manager). With NPM, all major JS Frameworks are exported thru NODEJS only. All JS Frameworks like Angular, React, Vue.js will ship their Frameworks code on Nodejs. 
+Nodejs can sit on any OS like Windows, Linux, MacOs etc. 
+It uses the Chrome's V8 JS Engine to execute the Js code out of the browser. This platform was developed by Ryan Dahl working for Joyant Technologies. Now Nodejs is completely owned and supported by Joyant Technologies. 
+U can use Command prompt to execute any JS Code thru nodejs. 
+

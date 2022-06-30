@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./lib/jquery-3.6.0.min.js"></script>
+    <script>
+        $().ready(()=>{
+            $("#search").on("keyup", function(){
+                let val = $(this).val();
+                $("table tr").filter(function(){
+                    $(this).toggle($(this).text().indexOf(val) > -1)
+                });
+            });
+        })
+    </script>
+    <title>Filtering Demo</title>
+</head>
+<body>
+    <p>
+        <input id="search" type="text" placeholder="Search records">
+    </p>
+    <table border="1">
+        <tr>
+            <th>
+                Emp ID
+            </th>
+            <th>
+                Emp Name
+            </th>
+            <th>
+                Emp Address
+            </th>
+        </tr>
+
+        <tr><td>123</td><td>Robert</td><td>New York</td></tr>
+        <tr><td>124</td><td>Daniel</td><td>New York</td></tr>
+        <tr><td>125</td><td>Jane</td><td>New Jersy</td></tr>
+        <tr><td>126</td><td>Arnold</td><td>Yorkshire</td></tr>
+        <tr><td>126</td><td>Zubiar</td><td>Delhi</td></tr>
+    </table>
+</body>
+</html>

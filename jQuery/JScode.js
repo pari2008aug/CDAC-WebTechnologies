@@ -29,8 +29,10 @@ class empRepo{
 
     update(emp){
         for (const key in this.data) {
-            if(this.data[key].id == emp.id)
+            if(this.data[key].id == emp.id){
                 this.data.splice(key, 1, emp);
+                return;//exit the function
+            }
         }
         throw "Employee not found to update"
     }
