@@ -3,13 +3,39 @@ U can create JS apps like File read/write, database access, socket programming, 
 Nodejs has its own community that provides ready to use libraries or packages for App development other than what the nodejs in its installation provides. It is called NPM(Node Package Manager). With NPM, all major JS Frameworks are exported thru NODEJS only. All JS Frameworks like Angular, React, Vue.js will ship their Frameworks code on Nodejs. 
 Nodejs can sit on any OS like Windows, Linux, MacOs etc. 
 It uses the Chrome's V8 JS Engine to execute the Js code out of the browser. This platform was developed by Ryan Dahl working for Joyant Technologies. Now Nodejs is completely owned and supported by Joyant Technologies. 
-U can use Command prompt to execute any JS Code thru nodejs. 
+U can use Command-prompt to execute any JS Code thru nodejs. 
 
 How Nodejs Works?
 Nodejs runs on V8 Engine of Chrome so that U can run JS code from UR environment instead of a browser. The Environment is created in the location folder of the Nodejs installation and an Environment variable Path is set to allow node access from anywhere in ur machine. 
 Nodejs runs a single threaded Application that performs a REPL activity using messages sent by the OS. Read, Evaluate, Print Loop will perform the operations in a single threaded environment until the user terminates the application. 
 However, Nodejs performs async programming. It uses callback function mechanism. CallBack functions are functions that are invoked using async mechanims of using internal threads of the browser. JS Runtime will use background threads using Thread Pool. A Pool of threads readily available for the executing app to consume it without a need to create an explicit thread is what is called as THREAD POOL. Nodejs uses the thread pool to make async calls. Nodejs uses explicitly these Async functions to perform its API calls including DB Access, File IO, REST Services  and many more. 
 Nodejs is a non blocking Single Threaded Environment. The App is not designed to wait for any user interaction. UR prompt, alert messages dont work in nodejs. 
+`
+
+Flow of the web server:
+http object creates a web server at 1234.
+It starts handling requests thru call back function of the createServer API. This will be in a loop until the server is shut down. 
+All requests will be handed within this callback function. switch case statement will handle all the URLs and processes it. For those pages which the server does not have, an Error Page is dynamically created and set(Default case).
+For favicon, we will simply handle the request and send a blank response. 
+For all static html pages, we have a helper function called display that reads the contents of the html and sends the content as response using a fs.createReadStream method. 
+For all static html pages, we will call the display method to write the contents of the file into the response. 
+For Registration, we have form object that sends back the inputs of the user in the form of GET/POST.
+In the req object, we can get the method of the data sending from the browser. In our case, it could be GET/POST. When the Registration is requested thru the URL, U will get the Registration Page. 
+Here the user makes inputs and clicks the submit button. submit button will tell the form object to take action. In this case(GET), the form fills the inputs into a querystring and sends the info to the server with /Registration as its URL. 
+In the server, first we will check if the URL has any querystring info. If we have it, we will parse it to a JSON object. And then read the contents of the inputs from the JSON object and do the required action. 
+The same thing will be done for POST method also. 
+To get JSON data from a JSON file, we have one more URL called /employees that reads the JSON file and converts into string and returns as a response. This is like a REST service with only GET in it.
+To read the data of the REST service, we use a HTML doc and jquery to make an Ajax call to the server to fetch the raw data of JSON, convert it into objects and display them in a tabular content. The request for the HTML doc is done in the /display URL.
+When a user requests for Display, we render the HTML doc, inside it, we call the Ajax request to the employees URL, get the data and convert it into a table data and display to the user. 
+
+
+
+
+
+
+
+
+
 
 
 
