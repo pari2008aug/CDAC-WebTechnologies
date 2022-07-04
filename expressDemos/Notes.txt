@@ -1,0 +1,16 @@
+Express is a nodejs framework for creating industrial scale web apps with less code and more features. It comes with its own http server and helps in creating Apps in a faster manner. It is a RAD framework for Http Applications. With Express, U can create rich internet apps. It interally uses HTTP module and the developers need not worry on the internals behind it. 
+All real time apps use Express as the web server platform of UR Application stack. It is one of the popuar full stack development platforms:
+MEAN->MongoDb, Express, Angular, Nodejs
+MERN->MongoDb, Express, React, Nodejs. 
+
+Express becomes the web server framework for creating web apps in more quicker and easier manner. It comes with its own View Engines that can be used to create MVC kind of Apps in Express. The popular view engines are JADE. 
+Express is also used to create RESTfull services in Ur applications. 
+REST stands for Representational State Trasfer. It means the the data that can represented in the form of plain text can be used to transfer(exchange) the data from the server to the client using HTTP methods. The methods determine the flow of the exchange.  
+
+Express is not a std module of Nodejs. It has to be downloaded from the NPM. Node Package Manager is a repository of all OPEN SOURCE packages available in the world of Nodejs.
+Express can be installed only in a nodejs application. Nodejs App is simply a folder that has a sp file called package.json that is more like a settings file that U can see in other languages and frameworks. 
+package.json will contain the info about UR Nodejs App as well as any dependencies of UR Application that must be loaded before U start. 
+
+
+
+
