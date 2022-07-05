@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Express Client</title>
+    <style>
+        div{
+            display: inline-block;
+            vertical-align: top;
+            border: 2px solid lightseagreen;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        const url = "http://localhost:1234/Employees"; //Url of UR API...
+        $(document).ready(()=>{
+            $("button:first").click(function(){
+                $("table").find("tr:gt(0)").remove();
+                //Make Ajax call to the API and get the records...
+                $.get(url, function(data){
+                    //let objects = JSON.parse(data);
+                    $.each(data, (index, emp)=>{
+                         const row = `<tr><td>${emp.empId}</td><td>${emp.empName}</td><td>${emp.empAddress}</td><td><a href="#" class="edit" data-id="${emp.empId}">Edit</a></td></tr>` 
+                         $("table").append(row)
+                         $(".edit").click(function(){
+                            const id = $(this).attr("data-id");
+                            const tempUrl = url + "/" + id;
+                            $.get(tempUrl, function(rec){
+                                $("#spId").text(rec[0].empId)
+                                $("#txtName").val(rec[0].empName);
+                                $("#txtAddress").val(rec[0].empAddress);
+                            });
+                         })  
+                    })
+                });
+
+            })
+            $("button:eq(1)").click(function(){
+                //code to connect to the api thru ajax and put the data. 
+                //get the input values and make it into an object.
+                let obj = {};
+                obj.empId = parseInt($("#spId").text());
+                obj.empName = $("#txtName").val();
+                obj.empAddress = $("#txtAddress").val();
+                //call the jquery's ajax method to put the data. 
+                $.ajax({
+                    'url' : url,
+                    'data' : obj,
+                    'method': 'PUT',
+                    'success' : function(res){
+                        alert(res);
+                    }
+                });
+
+            })
+            $("button:last").click(function(){
+                //get the inputs and convert them to object
+                let obj = {};
+                obj.empId = parseInt($("#txtNewId").val());
+                obj.empName = $("#txtNewName").val();
+                obj.empAddress = $("#txtNewAddress").val();
+                //call $.post to post the data to the server..
+                $.post(url, obj, function(res){
+                    alert(res);
+                })
+            })
+        })
+    </script>
+</head>
+<body>
+    <h1>Employee Interactive Client UI</h1>
+    <p><button>Fetch Records</button></p>
+    <div style="width: 50%;">
+        <table border="1">
+            <tr>
+                <th>Emp ID</th>
+                <th>Emp Name</th>
+                <th>Emp Address</th>
+                <th>Options</th>
+            </tr>
+        </table>
+    </div>
+    <div style="width: 45%;">
+        <h1>Details of Employee to Edit</h1>
+        <hr>    
+        <p>
+            EmpID: <span id="spId"></span>
+        </p>
+        <p>
+            <input type="text" placeholder="Emp Name" id="txtName"/>
+        </p>
+        <p>
+            <input type="text" placeholder="Emp Address" id="txtAddress"/>
+        </p>
+        <p>
+            <button>Update changes</button>
+        </p>
+    </div>
+
+    <div style="width: 45%;">
+        <h1>Details of Employee to Register</h1>
+        <hr>    
+        <p>
+            <input id="txtNewId" placeholder="Enter the ID"></span>
+        </p>
+        <p>
+            <input type="text" placeholder="Emp Name" id="txtNewName"/>
+        </p>
+        <p>
+            <input type="text" placeholder="Emp Address" id="txtNewAddress"/>
+        </p>
+        <p>
+            <button>Save changes</button>
+        </p>
+    </div>
+    
+</body>
+</html>
