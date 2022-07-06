@@ -1,0 +1,49 @@
+React is a JS library created by Facebook for developing User responsive web content. It is mainly used for UI Application Enhancement. It is mainly used for developing SPAs(Single Page Apps). Using the Command line interface, U can create React Apps in an industrial scale and more optimized manner. 
+
+How does it work?
+React Apps are developed using Reusable components where each component is a part of the application. Each component is a self contained unit of User interface. The component can also contain the data that it wants to present in the User interface, this is called as STATE. It can also have events, properties(PROPs) to interact within the data. Multiple components together make UR React Application. 
+
+How React is developed?
+React uses a concept called Virtual DOM(In-memory DOM), instead of working on the Physical DOM(An actual Page), we use objects like Page to create the required elements for the Page. Once the contents are prepared dynamically using code, they are transfered to the Physical DOM(Actual Browser) using a concept RENDERING. The data and the UI are ready before it is placed on the Browser. This makes React fast compared other JS Frameworks. 
+React only makes the changes if it is needed. When a page is being rendered, react first finds out what changes are to be made to the existing page, and only those changes will be rendered. This will make the App look even faster and optimized. 
+
+Terms: Components, Classes, Props, Events, Forms, lists, Hooks and services. 
+
+React Apps are developed in the form JSX files UR files will contain JS and XML in them. The Xml part will be the html content that U want to render. JS part would be data and its data handling feature. A mix of both is what a React Component would have. (JS+XML) =>JSX file. 
+Virtual DOM is created using XML and JS acts like the code to bind those DOM elements to UR physical DOM. 
+We have set of libraries and Command line tools to create React Apps, Components, Props and other ingradients using Nodejs Command line tools. 
+
+Software requirements:
+Nodejs installed UR machine. 
+install npx, the Command line utility for creating React components.
+develop the app from these command line tools. 
+
+Steps to create React App:
+Open UR fav location in the command prompt. Make sure Nodejs is installed in UR Machine. 
+npm install -g npx ->NPX is the Cmdline tool for creating React Components. 
+npx create-react-app nameofurapp
+cd nameofurapp
+npm start
+
+Files in the react app:
+node_modules contain all the Nodejs modules requried by react Envinronment. 
+public contains all the resources like icons, logos and the Main Page of the Application: index.html.
+src folder contains the actual contents of the application. All code U develop for UR app comes here. This includes Components, Images, CSS, JS code of UR app. 
+package.json contains the project settings of the React App. 
+
+In React, U can create 2 types of Components: Class Components that extends the Component class of the React library. We use this class when we have data and functions together. 
+We can also create Functional Components that perform simple tasks for the Application.
+
+React allows to create dynamic content by passing inputs to the React Functional Components. It uses a predefined variable called props to the data as dictionary and can be used in the Component creation. props is an object of JS which will have properties as key-value pairs. The property will be the key and the value assigned to it will be the value of the key. U can use props for Class Components also from React 8. 
+
+refs are basically objects of the React to store the data from the inputs into objects. The html input data will be refered as objects by using an API called createRef(). This object has current as a state of the refObject and can be used to get the data of it 
+
+all functions that handle events of UR elements in react must be explicitly associated with the this object. this keyword will bind the event handler method to the object of the COmponent so that the handler code can refer the ref objects of the component. 
+
+How to practise:
+Create App.js and test the code. Modify render Function of the App and test the code. 
+Create FirstComponent.js and set it directly in the index.js and test the code. let the App be there. 
+Create Functional Component called AppFooter and Class Component called AppHeader. Include them in the App Component and test the code.
+Create the BodyContent component and associate it in the App Component and test the code. 
+Create the Calc component and add to the BodyContent component and test the code. 
+Create a Product Repository Example. 
