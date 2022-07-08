@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geo Location</title>
+    <script>
+        function displayLocation(position){
+            let lat = position.coords.latitude;
+            let lng = position.coords.longitude;
+            document.getElementById("spPosition").innerText = `${lat},${lng}`;
+            let latlng = `${lat},${lng}`
+
+            var map_img = "https://maps.googleapis.com/maps/api/staticmap?center=" +latlng + "&zoom=15&size=400x300&key=AIzaSyAa8HeLH2lQMbPeOiMlM9D1VxZ7pbGQq8o";
+            document.getElementById("map").innerHTML = '<img src="' + map_img + '"/>';
+
+        }
+        function errorHandler(err){
+            if(err.code == 1) alert("Access is denied");
+            else if(err.code == 2) alert("Position is not available")
+            else alert("Unknown error!!!");
+        }
+        function getLocation(){
+            if(navigator.geolocation){
+                   navigator.geolocation.getCurrentPosition(displayLocation, errorHandler); 
+            }else{
+                alert("Please upgrade to browsers that support htmL5");
+            }
+        }
+    </script>
+</head>
+<body>
+    <button onclick="getLocation()">Get Location</button><br/>
+    <span id="spPosition"></span>
+    <div style="width: 300px; height: 300px;" id="map"/>
+</body>
+</html>
