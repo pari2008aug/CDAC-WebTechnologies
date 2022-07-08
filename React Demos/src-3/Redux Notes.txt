@@ -1,0 +1,27 @@
+What is Redux?
+Redux is an advanced concept of state management library in React. 
+
+Why Redux?
+React supports only Component level state management. Traditionally, React recommends to create state data at the top most component and allow it to pass on the data to the child components in the form of props. 
+Redux is a new framework that performs complex state management at the app level. As the state is stored in the app level, all components can refer it and even modify the state without much effort. 
+
+How it works?
+Redux maintains the state of the application in a single place called REDUX STORE. Components will access this state any time and modify it from any component within the application. 
+
+Terms in Redux:
+STORE: The central place whre all the data of the app is stored. Components will fetch the data from the store as and when it is needed. 
+ACTION: Operations that U can do on the data. It will be a JSON data that contains atleast 2 properties in it. type: that tells about the action U R going to perform, U can give a human readable name to it. payload: the data that is used to perform that operation. 
+REDUCERS: Functions that carry state and action in them as parameters and delegate it to the store and returns the new state after the modification.  These are basically small and modular functions used to create a new state based on the existing state and the kind of action that U have invoked. 
+ACTION CREATORS: Create new Actions with the action info that is created in the json format and returns a valid action. It takes the required info like action type, action data and returns a valid Action that will be used by the reducers.
+ 
+How the flow happens?
+The sequence of actions are as follows:
+React components subscribe to the store and get the data during the startup of the application. 
+To modify the state, React Components create Actions and dispatches the required action. 
+Reducers create a new state based on the action and returns it. Store will update itself with the modified state. 
+Once the state is changed, Store will send the updated state to all its subscribed Components. 
+
+Steps for creating the app:
+Create a sample react App using create-react-app CLI. 
+npm install redux react-redux --save  =>This will add the redux and react-redux packages into UR app.
+Create a folder under src named actions and create types.js file in it. 
