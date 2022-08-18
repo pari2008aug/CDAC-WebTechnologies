@@ -15,7 +15,7 @@ Training for CDAC-Hyd for June-2022 Batch
 
 # DevOps Training
 ## Steps for Creating Docker Image of a Java App
-# CDAC-WebTechnologies
+
 - Create a new Dir called SampleJavaApp.
 - Create the required Java file that contains UR code to execute. 
 - Create a Docker file with instructions written using a programming language like YAML. (Code is shared). 
