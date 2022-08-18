@@ -1,0 +1,139 @@
+DevOps: Docker. Jenkins, Kubernetes, Microservices and place it in Docker. 
+DevOps: Development + Operations. It is a collaboration b/w the Dev Team and the IT Team to make the software development and Production with Deployment in an automatted and repeated manner. It helps in making the Company's speeed to deliver the software and its services to the customers. 
+Support the development and Operations. 
+
+What is Development?
+Development means the following things:
+Requirement Gathering, Design, Unit testing, Coding and building the Application and ensure all the unit tests are passed. This is the development process. The Manager, the Team lead and the developer team are the part of the development process. 
+
+What is operations?
+Automation Testing, App Evaluation, INtegrations and deployment are the part of Operations. The App evaluation happens with an UAT(User Acceptance tests) member who acknowledges the process and the Application Execution. He/She will ensure that the App meets the requirements in an expected manner.  Auto Testers, IT support, Product evaluators and Customer users will be the part of the Operations Team.
+
+Challenges: 
+Many a case, the Ops teams are not aware of the technical Expertise of the Development and its Environment to build and execute the Application. 
+
+How The Apps are deployed in real time Environment?
+Design analysis will be done in the consulation with the customer, UAT member and the Product owner. A product owner is one who is aware of the in and out of the project. This includes the undestanding of the domain, issues with the Current Environment and also suggests the possible solutions for the issues related to the Project Documentation.
+On analysing the requirement, a Software Design Doc(SDD) is prepared by one of the team members with collaboration with the Team and present the data to the Customer. This doc needs to be approvved by the Customer before we have the hands on coding of the Application.
+With Agile Dev Methodology, U can plan UR Sprints. Sprint is a duration of implementing a certain task.  Sprint planning includes what task has to be given priority, who are the developers and what are the Use cases that one implements and a Tester to test UR code. Each Sprint will span for 2 to 3 weeks. The tasks will be allocated to the developers in the Sprint plan and the execution of the sprint will happen after that.
+Sprint Execution will start on a presise date and Dev Teams start to coordinate with the Operations teams and try to set the envirionment suited to deploy the Application. Tools like Git, Jenkins, Dockers come into picture to make this process more Automated in nature. The Dev Team will develop the code to satisfy their unit tests. 
+
+For Eg:
+The Task: Get the Employees from the database
+Requirement: Mock a Database. 
+Implementation:
+U should call the object's function on this database. 
+U should assert the results. 
+Ensure that the expected no of employees are matching the Employees of the Mock Database. 
+
+During the Sprint Cycle, the Dev Team will develop the code, Unit test it, do a personal review(PR) and will also a Team Review before the code is pushed into the code repositary. This code repos could b pushed into a Code REPO like Git/ BitBucket/TFS etc.
+The ops Team will use Tools like Jenkins to keep a watch on the pushes made to the Code Repo, for every push made, the tool will pull the code, build it, Auto Test it and give the report back to stack holders on the code push that had happened recently. Once the build succeeds, the Code is pushed into the server and the Customer Team will Functional test the code and give the approvals. If the code build has failed, the tool will generate Emails to all the stack holders of the project. This cycle will continue for every sprint. Any backlogs will be pushed to the next cycle.
+Once all the sprints are completed, the Functionalities will be finally tested by the UAT Team and give an acknowledgement on the Functionatlies and the project gets closed after a Closure repont is sent from the customer and a FINAL HAND-SHAKE happens.
+
+Steps taken before the Code is pushed into the Repository:
+Class Design. 
+Unit test cases are developed and approved
+Coding begins with code being developed to satisfy the test cases. This is called as TEST DRIVEN DEV(TDD). 
+A PCR(personal Code Review) or ICR(Interal Code Review) will be conducted and checked for all the coding stds. 
+TL will do the Final Review of the code. 
+Code is pushed to Repo. Demo is shown to all Stack holders in the meetings to close the sprint. 
+
+Why DevOps?
+Before DevOps, the Dev and Operations teams worked in complete Isolation.
+Testing and Deployment were isolated activities done after the Development. With this, it comsumed more time than the regular build cycles. Unexpected Challenges used to come into picture. Manual Code Deployment lead to lot of human errors in the production environment. 
+With DevOps, Software delivery is fast and easy. It also increases the deployment easiness. Many Organizations have moved to DevOps and with it, the Software deployment spped has increased by over 20%  of the total Application Delivery. 
+
+Benifits of DevOps?
+Predictability: The Dev Team and the Ops team will work in collaboration, any software that is created will go thru the cycle of events under the supervision of the DevOps Team. Build, Testing, Integration will be the part of the cycle. Any failures at any level will be known in the short time to all the stack holders and teams will put their effort in resolving those issues as early as possible. With this, the teams are aware of the issues and quickly resolve them and the deployment will be smoother. It gives low Failure rates compared to any other Deployment methodologies. 
+
+Reproducability: With DevOps, we can version everything before it is deployed to the Production machine. the versioning is available on all the major tools of DevOps. Git as well as Jenkins. If any issue happens, we can revert back to the most stable version and make it work withput any show-stoppers. 
+
+Maintainability: Any code developed using DevOps Methodologies are easy to maintain with lots of tools available in the industry. Many of these tools are Open Source and Free Licenced. To store the Code we use Git Repos, to build the Application cycle we use Jenkins, to place the built Code in the Production like Environment, we use Dockers and multiple Dockers are maintained using containerization like Kubernetes(K8s). From the Development to the Deployment to the Production, we have everything that could be automated and handled without much human interventions which leads to better and faster deployment. 
+
+When do U go for DevOps?
+Devops should be used for large Distributed Computing Apps like E-Commerce sites and Apps hosted in Cloud based Environments. It is also suited for Agile Development methodologies where the Larger App Development will be cut into small but rich in feature tasks and subtasks and builds are expected to be very frequent. In such cases, the changes are expected to be more and frequent(In one or 2 weeks) and build process is good to be automated so that the build handling will be internally done rather than one resource managing it. 
+
+--------------------------------Day 2----------------------------------------------
+DevOps automation tools: 
+After the dev is completed, most of the operations related  to build, test, integration, deployment and maintaining is done using tools that are available in the IT World. For these things we may not need the work from the developer team. These works can be handled by Non-Developers with a fair knowledge of Development if not complete expertise. Most of the tasks are very routine in nature, so we dont need a real time resource to do the same task again and again. These routine procedures could be very well automated and allow the system to do it automatically without any human Interaction. 
+Deployment Automation Tools: Jenkins is used for continuous Integration and Testing. 
+Logging Mangement: Log4J or Splunk  that solves issues like storing, analystics and logging of the App details to a common stand point. 
+Environment to deploy UR App: Docker is like UR Virtual Machine that contains the infrastructure required for UR App to run that includes OS, SDKs, Libraries, frameworks and Runtime required for UR App to run. It is  a container of all the above mentioned software on a simulated hardware where UR App will run. Each Docker container contains the minn requirements for UR App to run unlike the Virtual Machine which has the complete OS running on UR Existing OS. 
+Containerization Tool: With large no of Docker Containers available, we can group the Docker Containers into a Cluster called Node in Kubernetes and allow the K8s to handle the monitoring of the Application. 
+
+Docker: Is a centralized platform for packaging, deploying and running of the Applications as a closed Unit. It is a software platform that makes UR Process of building, running, managing and distributing Applications in a simple manner. It can virtualize the OS of a Computer on which UR App is installed and executed. 
+Why Docker?
+In recent times, most of the App Development is happening using Agile/SCRUM Development methodologies. In these cases, the Complete E2E App is not developed at a time. Every part of the app is developed independently, tested and deployed independently as a modular and micro level App.  U cannot have multiple servers and same server to hold all the services of UR App. It will become monolithic and for a while if UR server is down, the whole App and its services will be down that will be very costly for UR Organization. 
+With Dockers, we can provide seperate virtual Environment for each of our services and will be work independently without a centralized server. Docker itself provides one server using Cloud to expose UR services to the rest of the world.
+It reduces the requirement of heavy infrastructure resources for development and Production Environment.  The App will be placed inside a container that has all the hardware and the software resources required for the successfull execution of the App. It makes the deployment process more cost effective.
+
+What are Containers?
+Containers are self contained blocks within the Docker Environment that holds an Executable App in it. 
+
+How does Docker work?
+  Dockers use containers on the HOST's OS to run the Apps. It will create a Linux Kernel on the existing platform and make the Apps run on the virtualized Environment. Docker is an alternative to VMs. Dockers allow the Developers to pack the App, ship it into a single package where teh required infrastructure will be taken from the resources available either from the host OS or the Cloud Enviroinment and it will generate the required storage and the space for the App to Run.  
+
+How Dockers are different from VMs?
+Unlike VMs, containers use the same kernal of the host Environment but the VMs use independent OS kernels. With VMs, U can a complete OS with U and U can create, build and Execute Apps on that OS. 
+But in Docker, all U have is the required infrastructure to make UR App execute with no more additional resources available. Eventually, this Container runs only UR App and nothing else. 
+
+Dockers on Windows need Linux kernel installed in UR machine 
+
+Command to install MOngoDB in UR Docker:
+docker run -it mongo /bin/bash
+Connect to MongoDb: mongod
+Run the Mongo: mongo
+U can also open Docker Desktop and run from the images by clicking the cmd window
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
