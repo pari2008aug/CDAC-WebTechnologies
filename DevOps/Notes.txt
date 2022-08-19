@@ -84,46 +84,83 @@ docker run -it mongo /bin/bash
 Connect to MongoDb: mongod
 Run the Mongo: mongo
 U can also open Docker Desktop and run from the images by clicking the cmd window
+--------------------------JENKINS-----------------------------------------------------
+Continuous Integration(CI): It refers to the build and unit testing stages of a software release process. Every revision that is commited to the repo wil trigger an automted build and test. It will be a part of the DevOps pipeline where every code change that is pushed into GIT/CODE Base are automatically built, tested and prepared for a replease to production. 
+JENKINS is one of the most popular CI Tool.
 
+JENKINS is an Open source automation server tha helps in automating the parts of the Software development related to building, testing and Deploying the app faclilitating a continuous integration and delivery. It is a service based system that runs servlet containers such as Apache Tomcat. 
+Why use Jenkins?
+Jenkins is used to build and test UR product continuously, so that developers can integrate the changes into the build as a process. It is a part of the DevOps process along with nother native Cloud computing tools. 
 
+Developers develop their code and push it to Git/BitBucket/Hub.
+Testers will work on JUnit(Java Unit Testing framework), Selenium(Automation Testing framework) and Cucumber(JS Framework for Testing). 
+Jenkins is a tool that links all the stack holders of the development, testing and integration teams. It will be used by the DevOps team to integrate the code from a Specific Git Repo and map the building process and the testing environment. Jenkins internally has tools to monitor for any changes made into the repo, builds the application, notifies the testing environment to start testing the application. If all the tests are completed, it is automated to push the build to the Production Environment like docker, Azure, AWS and make the App available for all the stack holders of the product. 
+Ops Team will from now on work on the docker or the production environment to do any fine tuning to be done on the application for stability of the App. 
 
+Jenkins can be installed on any machine with the JDK8 + installed in it already, U should have also set th Env Variables like PATH, JAVA_HOME, JRE_HOME to the JDK Location. 
+After this U can install JENKINS from the website. 
 
+Steps required to install JENKINS:
+Install JDK 8 or JDK 11 in UR Machine if it is not installed. Set the Environment variables of JAVA_HOME, PATH and JRE_HOME variables in UR machine.
+Download the Jenkins Software installation setup file from the Jenkins Website. 
+During the installation, ensure U set the location of the JDK to UR local path. 
+Set the Port no for the Jenkins(Default is 8080) and ensure that the Port no is valid. 
+Complete the setup and restart the machine. 
+Open the browser, type localhost:PortNo in the URI. 
+Jenkins will ask for a Preset Admin password which is available at "C:\ProgramData\Jenkins\.jenkins\secrets\initialAdminPassword". After setting it, Jenkins will ask for plugins to be installed. U can choose the install selected Plugins and allow URSElf to install the requried ones. Make sure U have git and rest can be optional. 
+After the Installation of the plugins, the browser will open the dashboard of the Jenkins where Users can add new jobs. 
+---------------------------------------------------------------------------------------
+Kubernetes: 
+Kubernetes is a container management System developed by CNCF(Cloud Native Computing Foundation) that developed Google Platform. It helps in managing the containerized apps in various environments like Cloud physical and virtual. It is said to be highly flexible container tool to deliver complex apps running in clusters of 100s of individual servers. It is purely a cloud based Environment.. It comes with capability of high flexibility, automatic deployment, scaling of apps and operations of app containers across multiple clusters. It is mainly designed for container centric Infrastructure.
 
+Understanding the scenario: 
+U develop UR code in the form of a Microservice. A small self contained unit ofa program(MVC Controller built in Spring boot) is called as MICROSERVICE. U place this code inside a GIT REPO for Continuous integration. U will build the App and test it using CI tool like JENKINS and on post build, U place it in a container like DOCKER with all the software and hardware infra required for the service to expose. 
+In a real time scenario, there will be many such microservices created(Customer, Employee, Billing, Inventory, Vendors, Products, Locations and many more). Each of these services are placed in one or more containers. 
+Kubernetes is a container management tool that will have a database of containers maintained in a cloud based environment that ensures safety and reliability with static content available all the time. It maintains secondary clustors that will be made available if the primary clusters are broken down due to some emergency. It ensures the service is available all the time and maintained. 
 
+How Kubernetes(K8s) works? 
+It is linux based kernel that share lot of resources required to manage Complex apps. It is primarily used for distrubuted computing where it abstracts the underlying hardware servers and offer std and consistent interface for UR App management to consume a shared pool of resources(Both hardware and software). Its UI will have a dashboard of servers and containers that a Devops Engineer could monitor it from one place. 
 
+Features:
+Automatic scheduling of App Processes. 
+Integrated with CI tools for continuos dev, integration and deployment.
+Automatic Rollouts and RollBacks.
+System is loosly coupled where every component works as a seperate unit. 
+High density of resource utilization. 
+App Centric Management thru nice Dashboards. 
+Envronment consistency: Apps must run on all conditions, if there are any failures in any of the servers, the Environment should provide a backup server to run the show without stopping it. The customer will not be aware whether the service is rendered from the Primary or Secondary servers. 
 
+Architecure:
+Follows a Cluster archictecture for its management. It maintains a server of servers scaled across the world to manage the Apps. Any container placed in the K8s server will have a backup server called as secondayr server that is available whenever the primary server is down. If any time, UR App crashes in the primary server, the secondary server will load the app once again to make the services available to the customer all the time. 
 
+Key terms:
+POD: Is the smallest unit of a K8s App. It can be a single app that is running in one or more group of containers. Each POD contains one or more containers that make UR App.
+NODE: Node is a singe host that is capable of running on a single Physical VM. Each node will contain one or more PODs. We also called NODES as Minions. Clients will consume the App from the PODS available in NODES.
+SERVER: The Server or the service is a K8s logical set of PODS that work together for a certain functionality within an App. Services are rendered using subcriptions made by the user.
+CLUSTER: All the apps will be placed inside a collection of servers called as CLUSTER. Cluster is basically a collection of servers that help in managing and sharing the resources like RAM, CPU, DISK and devices intoa usable POOL.
+MASTER: Collection of Components that make up the Control panel of the K8s. This master will be maintained by a K8s Admin who work on cluster desisions like scheduling, responding to cluster events and management of the resources. 
+NAMESPACE: it is a logical envinronment that will be used to divide the clusters on a logical grouping. 
 
+Components of Master node:
+Master is the actual server of the K8s. It internally runs multiple processes that are nessasary to run and manage the clusters. 
+API-SERVER is one such process which will provide the services from various nodes and pods to the end customer. It is the GATEWAY for the Clusters. Developers interact with the API Server to get the requried services for their apps. 
+CONTROLLER Manager keeps an overview of what is happening in the clusters and ensure all the work is done properly like COntainer maintainence, rescheduling work etc  
+SCHEDULER will be responsible for scheduling the various clusters with different nodes based on the work load and the currently available resources.. 
+There is one more process called as ETCD which is the main server for the K8s. This will have a large no of databases each containing the data of where each node and its PODS are available. It stores the info as KEY-VALUE pairs and Config data at any given point of time. It will also maintain the status data of each node....
 
+Advantages:
+With its DASHBOARD UI, Engineers can maintain the K8s Environment easily.
+Developed by GOOGLE, there is a lot of industry experience in it. 
+One of the largest community among the container orchestration tools. 
+It has support from various Cloud computing players like Azure, Google, AWS and openstack. 
+It has good community support in the form of StackOverflow and K8s Dev Community.
+It is easy to find resources and tools required to containerization management. 
 
+Disadvantages:
+U need a heavy infrastrcture for creating K8s Environment. It is complicated and in some scenarios, UR App might never need this kind of a heavy infrastructure. 
+Security is not that effective when it comes to distributed computing like Container Orchrestration. 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Refer a Youtube video by Techworld with Nana for Understanding K8s.  
 
 
 
